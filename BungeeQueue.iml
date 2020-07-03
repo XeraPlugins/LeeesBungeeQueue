@@ -4,7 +4,7 @@
     <facet type="minecraft" name="Minecraft">
       <configuration>
         <autoDetectTypes>
-          <platformType>BUNGEECORD</platformType>
+          <platformType>WATERFALL</platformType>
         </autoDetectTypes>
       </configuration>
     </facet>
@@ -18,7 +18,7 @@
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
+    <orderEntry type="library" exported="" name="io.github.waterfallmc:waterfall-api:1.15-SNAPSHOT" level="project" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: jars.me.infinityz:Hexacord:v246" level="project" />
   </component>
 </module>
