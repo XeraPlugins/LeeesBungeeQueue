@@ -22,7 +22,10 @@ SERVERDOWNKICKMESSAGE: "&b6b&36t &6is down please try again later :("
 
 #this shows the queue size when you hover over the ping on the server list
 SERVERPINGINFOENABLE: "true"
-SERVERPINGINFO: "&b6b&36t &6Queue Size\n&6Priority: &l%priority%\n&6Regular: &l%regular%\n"
+SERVERPINGINFO:
+  - "&b6b&36t &6Queue Size"
+  - "&6Priority: &l%priority%"
+  - "&6Regular: &l%regular%"
 
 #Set the queue servers name that is in the bungee config.yml
 #Note that the main server is always the one you login to first
