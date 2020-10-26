@@ -13,8 +13,8 @@ Ask me for help when im on join my discord: https://discord.gg/WWm35Tc
 
 If you find anybugs or ways to improve the plugin add me on discord: Leee#7926
 
-If you like the plugin please leave a review on the spigotmc page thanks :)
-https://www.spigotmc.org/resources/74615/
+If you like the plugin please leave a review on the XeraMC page thanks :)
+https://xeramc.org/index.php?resources/leeesbungeequeue.4/
 
 This plugin is based off of this source code credit to this guy for making this plugin possible https://github.com/noobstersmc/BungeeQueue/ i plan on changing and improving from the original 
 to make it more anarchy server oriented
