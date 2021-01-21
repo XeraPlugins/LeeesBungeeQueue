@@ -13,7 +13,6 @@ public class PingEvent implements Listener {
             if (!Lang.CUSTOMPROTOCOL.contains("false")) {
                 ServerPing.Protocol provided = event.getResponse().getVersion();
 
-                LeeesBungeeQueue.getInstance().getLogger().info(String.valueOf(provided.getProtocol()));
 
                 provided.setName(Lang.CUSTOMPROTOCOL.replaceAll("&", "§"));
 
