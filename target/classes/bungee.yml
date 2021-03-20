@@ -1,6 +1,6 @@
 name: LeeesBungeeQueue
 main: Leees.Bungee.Queue.Bungee.LeeesBungeeQueue
-version: 4.0.3
+version: 4.0.5
 author: XeraPlugins
 authors: [Nate, Legault, Pistonmaster]
 commands:

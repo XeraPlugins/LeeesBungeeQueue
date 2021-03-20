@@ -22,6 +22,7 @@ public class ReloadCommand extends Command {
             sender.sendMessage(ChatColor.GOLD + "/lbq reload");
             sender.sendMessage(ChatColor.GOLD + "/lbq version");
             sender.sendMessage(ChatColor.GOLD + "/lbq stats");
+            sender.sendMessage(ChatColor.GOLD + "/lbq status");
             sender.sendMessage(ChatColor.DARK_BLUE + "----------------");
             return;
         }
@@ -39,6 +40,22 @@ public class ReloadCommand extends Command {
             sender.sendMessage(ChatColor.GOLD + "Priority: " + ChatColor.BOLD + LeeesBungeeQueue.priorityqueue.size());
             sender.sendMessage(ChatColor.GOLD + "Regular: " + ChatColor.BOLD + LeeesBungeeQueue.regularqueue.size());
             sender.sendMessage(ChatColor.DARK_BLUE + "----------------");
+            return;
+        }
+        if (args[0].equalsIgnoreCase("status")) {
+           if (sender.hasPermission("queue.priority")) {
+               sender.sendMessage(ChatColor.DARK_BLUE + "----------------");
+               sender.sendMessage(ChatColor.GOLD + "Queue Status");
+               sender.sendMessage(ChatColor.GOLD + "You have Priority");
+               sender.sendMessage(ChatColor.GOLD + "queue status :)");
+               sender.sendMessage(ChatColor.DARK_BLUE + "----------------");
+           } else {
+               sender.sendMessage(ChatColor.DARK_BLUE + "----------------");
+               sender.sendMessage(ChatColor.GOLD + "Queue Status");
+               sender.sendMessage(ChatColor.GOLD + "You have Regular");
+               sender.sendMessage(ChatColor.GOLD + "queue status :(");
+               sender.sendMessage(ChatColor.DARK_BLUE + "----------------");
+           }
             return;
         }
         if (sender.hasPermission(Lang.ADMINPERMISSION)) {
