@@ -26,6 +26,7 @@ public class LeeesBungeeQueue extends Plugin {
     public static LinkedHashMap<UUID, String> priorityqueue = new LinkedHashMap<>();
     public Configuration config;
     private static LeeesBungeeQueue instance;
+
     public static LeeesBungeeQueue getInstance() {
         return instance;
     }
@@ -44,21 +45,6 @@ public class LeeesBungeeQueue extends Plugin {
         logger.info("§9Registering listeners");
         getProxy().getPluginManager().registerListener(this, new Events());
         getProxy().getPluginManager().registerListener(this, new PingEvent());
-
-        logger.info("§9Loading Metrics");
-        new Metrics(this, 8519);
-
-        logger.info("§9Checking for update");
-        new UpdateChecker(this, 74615).getVersion(version -> {
-            if (this.getDescription().getVersion().equalsIgnoreCase(version)) {
-                logger.info("§9Your up to date!");
-            } else {
-                logger.info("§cThere is a update available.");
-                logger.info("§cCurrent version: " + this.getDescription().getVersion() + " New version: " + version);
-                logger.info("§cDownload it at: https://www.spigotmc.org/resources/74615");
-            }
-        });
-
         logger.info("§9Scheduling tasks");
         //sends the position message and updates tab on an interval for non priority players and priority players in chat
         getProxy().getScheduler().schedule(this, () -> {

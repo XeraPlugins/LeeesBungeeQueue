@@ -40,8 +40,9 @@ public class Events implements Listener {
             // ONLINE
             s.close();
             mainonline = true;
-        } catch (IOException e) {
+        } catch (Throwable t) {
             mainonline = false;
+            System.out.println(ChatColor.translateAlternateColorCodes('&', "&6[LBQ] Your main server is offline please check your config" ));
         }
     }
     public static void CheckIfQueueServerIsOnline() {
@@ -50,8 +51,9 @@ public class Events implements Listener {
             // ONLINE
             s.close();
             queueonline = true;
-        } catch (IOException e) {
+        } catch (Throwable t) {
             queueonline = false;
+            System.out.println(ChatColor.translateAlternateColorCodes('&', "&6[LBQ] Your queue server is offline please check your config" ));
         }
     }
 
@@ -62,8 +64,9 @@ public class Events implements Listener {
                 // ONLINE
                 s.close();
                 authonline = true;
-            } catch (IOException e) {
+            } catch (Throwable t) {
                 authonline = false;
+                System.out.println(ChatColor.translateAlternateColorCodes('&', "&6[LBQ] Your auth server is offline please check your config" ));
             }
         } else {
             authonline = true;
