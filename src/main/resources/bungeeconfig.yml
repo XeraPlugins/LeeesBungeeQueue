@@ -1,4 +1,4 @@
-# LeeesBungeeQueue V4.0.6
+# LeeesBungeeQueue V4.0.7
 # Make the main server the default one you login to
 # and then it should work if it doesnt add me on discord for help
 # my discord is Leee#9594 add to ask any questions
@@ -18,7 +18,7 @@ POSITIONMESSAGEHOTBAR: "false"
 QUEUEPOSITION: "&6Position in queue: &l<position>"
 ENABLEKICKMESSAGE: "true"
 KICKMESSAGE: "&6You have lost connection to the server"
-SERVERDOWNKICKMESSAGE: "&b6b&36t &6is down please try again later :("
+SERVERDOWNKICKMESSAGE: "&b7b&37t &6is down please try again later :("
 
 #this shows the queue size when you hover over the ping on the server list
 SERVERPINGINFOENABLE: "true"
