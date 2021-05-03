@@ -6,7 +6,7 @@ very easy to configure just make sure you have these things on bungeecord
 or waterfall set properly below
 
 in priorities make sure you have the name of the Main server where the map that people play on is
-if you cracked make it the auth servers name
+if your server is cracked make it the auth servers name instead
 
 ```
 EXAMPLE PREMIUM SERVERS:
