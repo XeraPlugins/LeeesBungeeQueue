@@ -31,4 +31,5 @@ MAINSERVER: "7b7t"
 ENABLEAUTHSERVER: "true"
 AUTHSERVER: "auth"    
 
+```
 need extra help ? join our support discord: https://discord.gg/QFkeH5qaKQ
