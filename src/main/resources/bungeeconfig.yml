@@ -1,4 +1,4 @@
-# LeeesBungeeQueue V4.0.7
+# LeeesBungeeQueue V4.1.0
 # Make the main server the default one you login to
 # and then it should work if it doesnt add me on discord for help
 # my discord is Leee#9594 add to ask any questions
@@ -19,6 +19,11 @@ QUEUEPOSITION: "&6Position in queue: &l<position>"
 ENABLEKICKMESSAGE: "true"
 KICKMESSAGE: "&6You have lost connection to the server"
 SERVERDOWNKICKMESSAGE: "&b7b&37t &6is down please try again later :("
+#set this to false if you want it to kick players from the
+#server when the main server goes down
+#if its set to true itll pause the queue and let players
+#rejoin and wait in queue until the main server is online
+CONNECTTOQUEUEWHENDOWN: "true"
 
 #this shows the queue size when you hover over the ping on the server list
 SERVERPINGINFOENABLE: "true"

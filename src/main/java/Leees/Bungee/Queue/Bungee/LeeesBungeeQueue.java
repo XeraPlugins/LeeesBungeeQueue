@@ -17,6 +17,8 @@ import net.md_5.bungee.api.plugin.Plugin;
 import net.md_5.bungee.config.Configuration;
 import net.md_5.bungee.config.ConfigurationProvider;
 import net.md_5.bungee.config.YamlConfiguration;
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 
 /**
  * LeeesBungeeQueue
@@ -108,25 +110,26 @@ public class LeeesBungeeQueue extends Plugin {
         getProxy().getScheduler().schedule(this, () -> {
             if (Lang.POSITIONMESSAGEHOTBAR.equals("true")) {
 
-            int i = 0;
+                int i = 0;
 
-            Map<UUID, String> the_map = new LinkedHashMap<>(regularqueue);
-            for (Entry<UUID, String> entry : the_map.entrySet()) {
-                try {
-                    i++;
+                Map<UUID, String> the_map = new LinkedHashMap<>(regularqueue);
+                for (Entry<UUID, String> entry : the_map.entrySet()) {
+                    try {
+                        i++;
 
-                    ProxiedPlayer player = getProxy().getPlayer(entry.getKey());
-                    if (player == null) {
-                        regularqueue.remove(entry.getKey());
-                        continue;
-                    }
+                        ProxiedPlayer player = getProxy().getPlayer(entry.getKey());
+                        if (player == null) {
+                            regularqueue.remove(entry.getKey());
+                            continue;
+                        }
+
                         player.sendMessage(ChatMessageType.ACTION_BAR,
                                 TextComponent.fromLegacyText(Lang.QUEUEPOSITION.replace("&", "§")
                                         .replace("<position>",
                                                 i + "").replace("<total>",
                                                 regularqueue.size() + "").replace("<server>",
                                                 entry.getValue())));
-                    } catch(Exception e){
+                    } catch (Exception e) {
                         regularqueue.remove(entry.getKey());
                         //TODO: handle exception
                     }
@@ -210,7 +213,7 @@ public class LeeesBungeeQueue extends Plugin {
                 }
             }
         }, Lang.QUEUEMOVEDELAY, Lang.QUEUEMOVEDELAY, TimeUnit.MILLISECONDS);
-        
+
         getProxy().getScheduler().schedule(this, () -> {
 
             int i = 0;
@@ -256,13 +259,12 @@ public class LeeesBungeeQueue extends Plugin {
                 }
             }
         }, Lang.QUEUEMOVEDELAY, Lang.QUEUEMOVEDELAY, TimeUnit.MILLISECONDS);
-
         //moves the queue when someone logs off the main server on an interval set in the bungeeconfig.yml
-        try {
-        getProxy().getScheduler().schedule(this, Events::moveQueue, Lang.QUEUEMOVEDELAY, Lang.QUEUEMOVEDELAY, TimeUnit.MILLISECONDS);
-        }
-        catch(NoSuchElementException ignored) {
-        }
+
+            try {
+                getProxy().getScheduler().schedule(this, Events::moveQueue, Lang.QUEUEMOVEDELAY, Lang.QUEUEMOVEDELAY, TimeUnit.MILLISECONDS);
+            } catch (NoSuchElementException ignored) {
+            }
         //moves the queue when someone logs off the main server on an interval set in the bungeeconfig.yml
         try {
             getProxy().getScheduler().schedule(this, Events::CheckIfMainServerIsOnline,500, 500, TimeUnit.MILLISECONDS);

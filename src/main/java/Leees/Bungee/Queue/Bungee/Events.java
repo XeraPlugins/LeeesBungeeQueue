@@ -14,6 +14,7 @@ import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.event.*;
 import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.event.EventHandler;
+import net.md_5.bungee.protocol.packet.Chat;
 
 /**
  * Events
@@ -129,7 +130,16 @@ public class Events implements Listener {
                     }
                 }
             } else {
-                event.getPlayer().disconnect(Lang.SERVERDOWNKICKMESSAGE.replace("&", "§"));
+                if (Lang.CONNECTTOQUEUEWHENDOWN.contains("true")) {
+                     if (event.getPlayer().hasPermission(Lang.QUEUEPRIORITYPERMISSION)) {
+                         priority.add(event.getPlayer().getUniqueId());
+                     } else {
+                         regular.add(event.getPlayer().getUniqueId());
+                     }
+                } else {
+                    event.getPlayer().disconnect(Lang.SERVERDOWNKICKMESSAGE.replace("&", "§"));
+                }
+
             }
         }
     }
@@ -198,27 +208,29 @@ public class Events implements Listener {
         //Random rn = new Random();
         //for (int i = 0; i < 100; i++) {
             //int answer = rn.nextInt(10) + 1;
-                if (!LeeesBungeeQueue.priorityqueue.isEmpty()) {
-                    if (Lang.MAINSERVERSLOTS <= ProxyServer.getInstance().getOnlineCount() - LeeesBungeeQueue.regularqueue.size() - LeeesBungeeQueue.priorityqueue.size())
-                        return;
-                    if (LeeesBungeeQueue.priorityqueue.isEmpty())
-                        return;
-                        Entry<UUID, String> entry2 = LeeesBungeeQueue.priorityqueue.entrySet().iterator().next();
-                        ProxiedPlayer player2 = ProxyServer.getInstance().getPlayer(entry2.getKey());
-                        player2.connect(ProxyServer.getInstance().getServerInfo(entry2.getValue()));
-                        player2.sendMessage(ChatMessageType.CHAT, TextComponent.fromLegacyText(Lang.JOININGMAINSERVER.replace("&", "§").replace("<server>", entry2.getValue())));
-                        LeeesBungeeQueue.priorityqueue.remove(entry2.getKey());
-                } else {
-                    if (Lang.MAINSERVERSLOTS <= ProxyServer.getInstance().getOnlineCount() - LeeesBungeeQueue.regularqueue.size() - LeeesBungeeQueue.priorityqueue.size())
-                        return;
-                    if (LeeesBungeeQueue.regularqueue.isEmpty())
-                        return;
-                        Entry<UUID, String> entry = LeeesBungeeQueue.regularqueue.entrySet().iterator().next();
-                        ProxiedPlayer player = ProxyServer.getInstance().getPlayer(entry.getKey());
-                        player.connect(ProxyServer.getInstance().getServerInfo(entry.getValue()));
-                        player.sendMessage(ChatMessageType.CHAT, TextComponent.fromLegacyText(Lang.JOININGMAINSERVER.replace("&", "§").replace("<server>", entry.getValue())));
-                        LeeesBungeeQueue.regularqueue.remove(entry.getKey());
-                }
+        if (Events.authonline == true && Events.mainonline == true && Events.queueonline == true) {
+            if (!LeeesBungeeQueue.priorityqueue.isEmpty()) {
+                if (Lang.MAINSERVERSLOTS <= ProxyServer.getInstance().getOnlineCount() - LeeesBungeeQueue.regularqueue.size() - LeeesBungeeQueue.priorityqueue.size())
+                    return;
+                if (LeeesBungeeQueue.priorityqueue.isEmpty())
+                    return;
+                Entry<UUID, String> entry2 = LeeesBungeeQueue.priorityqueue.entrySet().iterator().next();
+                ProxiedPlayer player2 = ProxyServer.getInstance().getPlayer(entry2.getKey());
+                player2.connect(ProxyServer.getInstance().getServerInfo(entry2.getValue()));
+                player2.sendMessage(ChatMessageType.CHAT, TextComponent.fromLegacyText(Lang.JOININGMAINSERVER.replace("&", "§").replace("<server>", entry2.getValue())));
+                LeeesBungeeQueue.priorityqueue.remove(entry2.getKey());
+            } else {
+                if (Lang.MAINSERVERSLOTS <= ProxyServer.getInstance().getOnlineCount() - LeeesBungeeQueue.regularqueue.size() - LeeesBungeeQueue.priorityqueue.size())
+                    return;
+                if (LeeesBungeeQueue.regularqueue.isEmpty())
+                    return;
+                Entry<UUID, String> entry = LeeesBungeeQueue.regularqueue.entrySet().iterator().next();
+                ProxiedPlayer player = ProxyServer.getInstance().getPlayer(entry.getKey());
+                player.connect(ProxyServer.getInstance().getServerInfo(entry.getValue()));
+                player.sendMessage(ChatMessageType.CHAT, TextComponent.fromLegacyText(Lang.JOININGMAINSERVER.replace("&", "§").replace("<server>", entry.getValue())));
+                LeeesBungeeQueue.regularqueue.remove(entry.getKey());
+            }
+        }
         }
     //}
 
