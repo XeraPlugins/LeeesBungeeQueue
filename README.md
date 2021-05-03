@@ -8,8 +8,9 @@ or waterfall set properly below
 in priorities make sure you have the name of the Main server where the map that people play on is
 if you cracked make it the auth servers name
 
+```
 EXAMPLE PREMIUM SERVERS:
- priorities:
+priorities:
   - Main
 
 EXAMPLE CRACKED SERVERS:
