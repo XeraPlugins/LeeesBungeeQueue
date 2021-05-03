@@ -1,20 +1,33 @@
 # LeeesBungeeQueue
 [![discord](https://discord.com/api/guilds/683053832694923319/embed.png)](https://discord.gg/WWm35Tc)
 
-LeeesBungeeQueue is a 2b2t like queue plugin for Bungeecord to limit the amount of players on the main server because of lag or because its too many and people who try to join will wait in a separate queue server in a line to join the main one the queue should be a server where they are stuck in one place so that no one can move and load chunks so that the queue isnt laggy at all
+LeeesBungeeQueue is a 2b2t like queue plugin for Bungeecord
+very easy to configure just make sure you have these things on bungeecord
+or waterfall set properly below
 
-Premade Proxy Server Download:
-https://www.6b6t.org/proxy.zip
+in priorities make sure you have the name of the Main server where the map that people play on is
+if you cracked make it the auth servers name
 
-Premade Queue Server Download:
-https://www.6b6t.org/queue.zip
+EXAMPLE PREMIUM SERVERS:
+ priorities:
+  - Main
 
-Ask me for help when im on join my discord: https://discord.gg/WWm35Tc
+EXAMPLE CRACKED SERVERS:
+ priorities:
+  - auth
 
-If you find anybugs or ways to improve the plugin add me on discord: Leee#7926
+also make sure this is set to true
+force_default_server: true
 
-If you like the plugin please leave a review on the XeraMC page thanks :)
-https://xeramc.org/index.php?resources/leeesbungeequeue.4/
+How to configure LBQ's config properly
+make sure you set the names of the servers
+in lbq to the exact name of the ones you set
+in the bungeecord config
 
-This plugin is based off of this source code credit to this guy for making this plugin possible https://github.com/noobstersmc/BungeeQueue/ i plan on changing and improving from the original 
-to make it more anarchy server oriented
+QUEUESERVER: "queue"
+MAINSERVER: "7b7t"
+#set this to false if your a premium server
+ENABLEAUTHSERVER: "true"
+AUTHSERVER: "auth"    
+
+need extra help ? join our support discord: https://discord.gg/QFkeH5qaKQ
