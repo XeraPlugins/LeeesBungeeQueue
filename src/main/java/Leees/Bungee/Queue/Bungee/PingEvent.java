@@ -4,10 +4,11 @@ import net.md_5.bungee.api.ServerPing;
 import net.md_5.bungee.api.event.ProxyPingEvent;
 import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.event.EventHandler;
+import net.md_5.bungee.event.EventPriority;
 
 public class PingEvent implements Listener {
     ServerPing.Protocol protocol;
-    @EventHandler
+    @EventHandler(priority = EventPriority.HIGH)
     public void onPing(ProxyPingEvent event) {
         if (Lang.SERVERPINGINFOENABLE.equals("true")) {
             if (!Lang.CUSTOMPROTOCOL.contains("false")) {
@@ -27,8 +28,9 @@ public class PingEvent implements Listener {
                 info = addInfo(info, new ServerPing.PlayerInfo(str.replaceAll("&", "§").replaceAll("%priority%", "" + LeeesBungeeQueue.priorityqueue.size()).replaceAll("%regular%", "" + LeeesBungeeQueue.regularqueue.size()), String.valueOf(i)));
                 i++;
             }
+            ServerPing.Players players;
 
-            ServerPing.Players players = new ServerPing.Players(Lang.QUEUESERVERSLOTS, LeeesBungeeQueue.getInstance().getProxy().getOnlineCount(), info);
+            players = new ServerPing.Players(Lang.QUEUESERVERSLOTS, LeeesBungeeQueue.getInstance().getProxy().getOnlineCount(), info);
 
             ServerPing ping = new ServerPing(protocol, players, event.getResponse().getDescriptionComponent(), event.getResponse().getFaviconObject());
             event.setResponse(ping);
