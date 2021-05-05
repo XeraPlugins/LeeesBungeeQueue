@@ -24,8 +24,12 @@ public class PingEvent implements Listener {
             ServerPing.PlayerInfo[] info = {};
             int i = 0;
 
+            int total;
+
+            total = LeeesBungeeQueue.priorityqueue.size() + LeeesBungeeQueue.regularqueue.size();
+
             for (String str : Lang.SERVERPINGINFO) {
-                info = addInfo(info, new ServerPing.PlayerInfo(str.replaceAll("&", "§").replaceAll("%priority%", "" + LeeesBungeeQueue.priorityqueue.size()).replaceAll("%regular%", "" + LeeesBungeeQueue.regularqueue.size()), String.valueOf(i)));
+                info = addInfo(info, new ServerPing.PlayerInfo(str.replaceAll("&", "§").replaceAll("%priority%", "" + LeeesBungeeQueue.priorityqueue.size()).replaceAll("%regular%", "" + LeeesBungeeQueue.regularqueue.size()).replaceAll("%maxplayers%", String.valueOf(Lang.MAINSERVERSLOTS)).replaceAll("%totalinqueue%", String.valueOf(total)), String.valueOf(i)));
                 i++;
             }
             ServerPing.Players players;

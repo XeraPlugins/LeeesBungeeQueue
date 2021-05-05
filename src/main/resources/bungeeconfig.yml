@@ -1,4 +1,4 @@
-# LeeesBungeeQueue V4.1.1
+# LeeesBungeeQueue V4.1.2
 # Make the main server the default one you login to
 # and then it should work if it doesnt add me on discord for help
 # my discord is Leee#9594 add to ask any questions
@@ -28,9 +28,11 @@ CONNECTTOQUEUEWHENDOWN: "true"
 #this shows the queue size when you hover over the ping on the server list
 SERVERPINGINFOENABLE: "true"
 SERVERPINGINFO:
-  - "&b7b&37t &6Queue Size"
+  - "&b7b&37t &6Queue Info"
   - "&6Priority: &l%priority%"
   - "&6Regular: &l%regular%"
+  - "&6Total in queue: &l%totalinqueue%"
+  - "&6Max players: &l%maxplayers%"
 CUSTOMPROTOCOL: "&b7b&37t &61.8.x to 1.16.x"
 
 #Set the queue servers name that is in the bungee config.yml
@@ -50,12 +52,12 @@ JOININGMAINSERVER: "&6Connecting to 7b7t..."
 
 
 #Max players allowed onto main server
-MAINSERVERSLOTS: 100
+MAINSERVERSLOTS: 150
 
 #Total people allowed to be connected to the queue network
 #Make sure you set the bungeecord slots higher then the amount
 #of people you get regularly i set mine to 9000 and 9000 on the queue server
-QUEUESERVERSLOTS: 9000
+QUEUESERVERSLOTS: 10000
 
 
 #Queue move delay in miliseconds default is 2000ms
