@@ -14,7 +14,7 @@ import java.util.logging.Level;
 public final class Main extends JavaPlugin implements Listener {
 
     public boolean forceLocation = true;
-
+    
     public String forcedWorldName = "world_the_end";
     public int forcedX = 0;
     public int forcedY = 200;

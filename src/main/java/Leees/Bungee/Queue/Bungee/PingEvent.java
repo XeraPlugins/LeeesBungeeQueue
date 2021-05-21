@@ -17,18 +17,18 @@ public class PingEvent implements Listener {
     public void onPing(ProxyPingEvent event) {
         int total;
 
-        total = LeeesBungeeQueue.priorityqueue.size() + LeeesBungeeQueue.regularqueue.size();
+        total = LeeesBungeeQueue.getInstance().getPriorityqueue().size() + LeeesBungeeQueue.getInstance().getRegularqueue().size();
       if (Lang.ENABLEMOTD.contains("true")) {
           if (!Lang.ENABLERANDOMMOTD.contains("true")) {
               ServerPing serverPing = event.getResponse();
               serverPing.setDescription(Lang.MOTD.replaceAll("&", "§").replaceAll("%priosize%", "" +
-                      LeeesBungeeQueue.priorityqueue.size()).replaceAll("%regsize%", "" + LeeesBungeeQueue.regularqueue.size())
+                      LeeesBungeeQueue.getInstance().getPriorityqueue().size()).replaceAll("%regsize%", "" + LeeesBungeeQueue.getInstance().getRegularqueue().size())
                       .replaceAll("%maxplayers%", "" + Lang.MAINSERVERSLOTS).replaceAll("%total%", "" + total));
               event.setResponse(serverPing);
           } else {
               ServerPing serverPing = event.getResponse();
               serverPing.setDescriptionComponent(new TextComponent(Lang.RANDOMMOTDS.get(random.nextInt(Lang.RANDOMMOTDS.size())).replaceAll("&", "§").replaceAll("%priosize%", "" +
-                      LeeesBungeeQueue.priorityqueue.size()).replaceAll("%regsize%", "" + LeeesBungeeQueue.regularqueue.size())
+                      LeeesBungeeQueue.getInstance().getPriorityqueue().size()).replaceAll("%regsize%", "" + LeeesBungeeQueue.getInstance().getRegularqueue().size())
                       .replaceAll("%maxplayers%", "" + Lang.MAINSERVERSLOTS).replaceAll("%total%", "" + total)));
               event.setResponse(serverPing);
           }
@@ -48,15 +48,21 @@ public class PingEvent implements Listener {
             int i = 0;
 
             for (String str : Lang.SERVERPINGINFO) {
-                info = addInfo(info, new ServerPing.PlayerInfo(str.replaceAll("&", "§").replaceAll("%priority%", "" + LeeesBungeeQueue.priorityqueue.size()).replaceAll("%regular%", "" + LeeesBungeeQueue.regularqueue.size()).replaceAll("%maxplayers%", String.valueOf(Lang.MAINSERVERSLOTS)).replaceAll("%totalinqueue%", String.valueOf(total)), String.valueOf(i)));
+                info = addInfo(info, new ServerPing.PlayerInfo(str.replaceAll("&", "§").replaceAll("%priority%", "" + LeeesBungeeQueue.getInstance().getPriorityqueue().size()).replaceAll("%regular%", "" + LeeesBungeeQueue.getInstance().getRegularqueue().size()).replaceAll("%maxplayers%", String.valueOf(Lang.MAINSERVERSLOTS)).replaceAll("%totalinqueue%", String.valueOf(total)), String.valueOf(i)));
                 i++;
             }
             ServerPing.Players players;
 
-            players = new ServerPing.Players(Lang.QUEUESERVERSLOTS, LeeesBungeeQueue.getInstance().getProxy().getOnlineCount(), info);
+            if (Lang.ENABLEQUEUESERVERSLOTS.contains("true")) {
 
-            ServerPing ping = new ServerPing(protocol, players, event.getResponse().getDescriptionComponent(), event.getResponse().getFaviconObject());
-            event.setResponse(ping);
+                players = new ServerPing.Players(Lang.QUEUESERVERSLOTS, LeeesBungeeQueue.getInstance().getProxy().getOnlineCount(), info);
+                ServerPing ping = new ServerPing(protocol, players, event.getResponse().getDescriptionComponent(), event.getResponse().getFaviconObject());
+                event.setResponse(ping);
+            } else {
+                players = new ServerPing.Players(Lang.MAINSERVERSLOTS, LeeesBungeeQueue.getInstance().getProxy().getOnlineCount(), info);
+                ServerPing ping = new ServerPing(protocol, players, event.getResponse().getDescriptionComponent(), event.getResponse().getFaviconObject());
+                event.setResponse(ping);
+            }
         }
     }
 

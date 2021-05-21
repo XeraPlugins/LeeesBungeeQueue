@@ -24,8 +24,17 @@ import org.bukkit.ChatColor;
  * LeeesBungeeQueue
  */
 public class LeeesBungeeQueue extends Plugin {
-    public static LinkedHashMap<UUID, String> regularqueue = new LinkedHashMap<>();
-    public static LinkedHashMap<UUID, String> priorityqueue = new LinkedHashMap<>();
+    public LinkedHashMap<UUID, String> regularqueue = new LinkedHashMap<>();
+    public LinkedHashMap<UUID, String> priorityqueue = new LinkedHashMap<>();
+    public LinkedHashMap<UUID, String> getRegularqueue() {
+        return regularqueue;
+    }
+
+    public LinkedHashMap<UUID, String> getPriorityqueue() {
+        return priorityqueue;
+    }
+
+
     public Configuration config;
     private static LeeesBungeeQueue instance;
 

@@ -37,8 +37,8 @@ public class ReloadCommand extends Command {
         if (args[0].equalsIgnoreCase("stats")) {
             sender.sendMessage(ChatColor.DARK_BLUE + "----------------");
             sender.sendMessage(ChatColor.GOLD + "Queue stats");
-            sender.sendMessage(ChatColor.GOLD + "Priority: " + ChatColor.BOLD + LeeesBungeeQueue.priorityqueue.size());
-            sender.sendMessage(ChatColor.GOLD + "Regular: " + ChatColor.BOLD + LeeesBungeeQueue.regularqueue.size());
+            sender.sendMessage(ChatColor.GOLD + "Priority: " + ChatColor.BOLD + LeeesBungeeQueue.getInstance().getPriorityqueue().size());
+            sender.sendMessage(ChatColor.GOLD + "Regular: " + ChatColor.BOLD + LeeesBungeeQueue.getInstance().getRegularqueue().size());
             sender.sendMessage(ChatColor.DARK_BLUE + "----------------");
             return;
         }
