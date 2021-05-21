@@ -13,8 +13,8 @@ Waterfall / Bungeecord config.yml ->
 
 please note only use the plugin
 with main or auth in priorities if
-you have alwaysqueue set to false other wise
-make the only server in priorities is the queue server
+you have alwaysqueue set to false otherwise
+make the only server in priorities the queue server
 EXAMPLE PREMIUM SERVERS:
 priorities:
   - Main
@@ -32,6 +32,26 @@ EXAMPLE CRACKED SERVERS:
 
 also make sure this is set to true
 force_default_server: true
+
+at the bottom of your bungeecord / waterfall config
+add the queue main and auth(only if your server is offline mode / cracked)
+like this example below:
+servers:
+  7b7t:
+    motd: '&b7b&37t &6Main Server'
+    address: localhost:8401
+    restricted: true
+  queue:
+    motd: '&&b7b&37t &6Queue Server'
+    address: localhost:8402
+    restricted: true
+  auth:
+    motd: '&b7b&37t &6Auth Server'
+    address: localhost:8403
+    restricted: true
+
+
+
 
 LeeesBungeeQueue config.yml ->
 
