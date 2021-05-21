@@ -9,6 +9,10 @@ in priorities make sure you have the name of the Main server where the map that 
 if your server is cracked make it the auth servers name instead
 
 ```
+please note only use the plugin
+with main or auth in priorities if
+you have alwaysqueue set to false other wise
+make the only server in priorities the queue server
 EXAMPLE PREMIUM SERVERS:
 priorities:
   - Main
@@ -16,6 +20,13 @@ priorities:
 EXAMPLE CRACKED SERVERS:
  priorities:
   - auth
+  
+  
+ If you have alwaysqueue set to true
+ which it is set to by default then make
+ sure you have this set like this
+ priorities:
+ - queue
 
 also make sure this is set to true
 force_default_server: true
