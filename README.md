@@ -9,10 +9,13 @@ in priorities make sure you have the name of the Main server where the map that 
 if your server is cracked make it the auth servers name instead
 
 ```
+
+Waterfall / Bungeecord config.yml ->
+
 please note only use the plugin
 with main or auth in priorities if
 you have alwaysqueue set to false other wise
-make the only server in priorities the queue server
+make the only server in priorities is the queue server
 EXAMPLE PREMIUM SERVERS:
 priorities:
   - Main
@@ -30,6 +33,8 @@ EXAMPLE CRACKED SERVERS:
 
 also make sure this is set to true
 force_default_server: true
+
+LeeesBungeeQueue config.yml ->
 
 How to configure LBQ's config properly
 make sure you set the names of the servers
