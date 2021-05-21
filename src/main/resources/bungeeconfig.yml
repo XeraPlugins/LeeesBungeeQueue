@@ -1,4 +1,4 @@
-# LeeesBungeeQueue V4.1.4
+# LeeesBungeeQueue V4.1.5
 # Make the main server the default one you login to
 # and then it should work if it doesnt add me on discord for help
 # my discord is Leee#9594 add to ask any questions
@@ -95,6 +95,8 @@ MAINSERVER: "7b7t"
 #set this to false if your a premium server
 ENABLEAUTHSERVER: "true"
 AUTHSERVER: "auth"
+#server to send the players to after queue
+AFTERQUEUE: "auth"
 
 
 #Connecting to server message use <server> if you want it

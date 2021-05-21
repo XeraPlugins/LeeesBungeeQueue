@@ -152,7 +152,7 @@ public class Events implements Listener {
                 return;
             priority.remove(player.getUniqueId());
             // Send the player to the queue and send a message.
-            String originalTarget = e.getTarget().getName();
+            String originalTarget = Lang.AFTERQUEUE;
             e.setTarget(queue);
             player.setTabHeader(
                     new ComponentBuilder(Lang.HEADERPRIORITY.replace("&", "§").replace("<position>", "None").replace("<wait>", "None")).create(),
@@ -166,7 +166,7 @@ public class Events implements Listener {
                 return;
             regular.remove(player.getUniqueId());
             // Send the player to the queue and send a message.
-            String originalTarget = e.getTarget().getName();
+            String originalTarget = Lang.AFTERQUEUE;
             e.setTarget(queue);
             player.setTabHeader(
                     new ComponentBuilder(Lang.HEADER.replace("&", "§").replace("<position>", "None").replace("<wait>", "None")).create(),
@@ -210,7 +210,7 @@ public class Events implements Listener {
             //int answer = rn.nextInt(10) + 1;
         if (Events.authonline == true && Events.mainonline == true && Events.queueonline == true) {
             if (!LeeesBungeeQueue.getInstance().getPriorityqueue().isEmpty()) {
-                if (Lang.MAINSERVERSLOTS <= ProxyServer.getInstance().getOnlineCount() - LeeesBungeeQueue.getInstance().getRegularqueue().size() - LeeesBungeeQueue.getInstance().getPriorityqueue()    .size())
+                if (Lang.MAINSERVERSLOTS <= ProxyServer.getInstance().getOnlineCount() - LeeesBungeeQueue.getInstance().getRegularqueue().size() - LeeesBungeeQueue.getInstance().getPriorityqueue().size())
                     return;
                 if (LeeesBungeeQueue.getInstance().getPriorityqueue().isEmpty())
                     return;
