@@ -64,7 +64,9 @@ QUEUESERVER: "queue"
 MAINSERVER: "7b7t"
 #set this to false if your a premium server
 ENABLEAUTHSERVER: "true"
-AUTHSERVER: "auth"    
+AUTHSERVER: "auth"
+#server to send the players to after queue
+AFTERQUEUE: "auth"
 
 ```
 need extra help ? join our support discord: https://discord.gg/QFkeH5qaKQ
