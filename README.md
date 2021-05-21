@@ -5,8 +5,7 @@ LeeesBungeeQueue is a 2b2t like queue plugin for Bungeecord
 very easy to configure just make sure you have these things on bungeecord
 or waterfall set properly below
 
-in priorities make sure you have the name of the Main server where the map that people play on is
-if your server is cracked make it the auth servers name instead
+NOTE: it is recommended to use Waterfall and not bone stock bungeecord with this plugin (waterfall forks work fine) if you have an issue with a specific waterfall fork please let me know and ill see whats going on otherwise please use regular waterfall https://papermc.io/downloads#Waterfall
 
 ```
 
