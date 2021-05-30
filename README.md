@@ -3,7 +3,9 @@
 
 LeeesBungeeQueue is a 2b2t like queue plugin for Bungeecord
 very easy to configure just make sure you have these things on bungeecord
-or waterfall set properly below
+or waterfall set properly below 
+
+NOTE: if you need a plugin to make a queue server you can place this same jar file in any paper / spigot server and itll act as a plugin to prevent player movement, set gamemode, set world and exact specific coordinates you want all the players to be stuck at
 
 NOTE: it is recommended to use Waterfall and not bone stock bungeecord with this plugin (waterfall forks work fine) if you have an issue with a specific waterfall fork please let me know and ill see whats going on otherwise please use regular waterfall https://papermc.io/downloads#Waterfall
 
