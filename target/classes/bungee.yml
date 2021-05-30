@@ -1,8 +1,0 @@
-name: LeeesBungeeQueue
-main: Leees.Bungee.Queue.Bungee.LeeesBungeeQueue
-version: 4.1.3
-author: XeraPlugins
-authors: [Nate, Legault, Pistonmaster]
-commands:
-  lbq:
-    description: to reload the config
