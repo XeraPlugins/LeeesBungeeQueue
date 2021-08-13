@@ -14,8 +14,7 @@ import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.event.*;
 import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.event.EventHandler;
-import net.md_5.bungee.protocol.packet.Chat;
-
+import net.md_5.bungee.event.EventPriority;
 /**
  * Events
  */
@@ -28,7 +27,7 @@ public class Events implements Listener {
     public static boolean queueonline = false;
     public static boolean authonline = false;
 
-    @EventHandler
+    @EventHandler(priority = EventPriority.HIGHEST)
     public void onPreLogin(PreLoginEvent ple) {
         if (!ple.getConnection().getName().matches(Lang.REGEX)) {
             ple.setCancelReason(new TextComponent(ChatColor.GOLD + "[LBQ] Invalid username please use: " + Lang.REGEX));
@@ -74,7 +73,7 @@ public class Events implements Listener {
         }
     }
 
-    @EventHandler
+    @EventHandler(priority = EventPriority.HIGHEST)
     public void on(PostLoginEvent event) {
         if (!Lang.ENABLEAUTHSERVER.contains("true")) {
             if (mainonline && queueonline) {
@@ -144,7 +143,7 @@ public class Events implements Listener {
         }
     }
 
-    @EventHandler
+    @EventHandler(priority = EventPriority.HIGHEST)
     public void onSend(ServerConnectEvent e) {
         ProxiedPlayer player = e.getPlayer();
         if (player.hasPermission(Lang.QUEUEPRIORITYPERMISSION)) {
@@ -178,7 +177,7 @@ public class Events implements Listener {
         }
     }
 
-    @EventHandler
+    @EventHandler(priority = EventPriority.HIGHEST)
     public void onDisconnect(PlayerDisconnectEvent e) {
         //if a play in queue logs off it removes them and their position so when they relog
         //they get sent to the back of the line and have to wait through the queue again yeah
@@ -234,7 +233,7 @@ public class Events implements Listener {
         }
     //}
 
-    @EventHandler
+    @EventHandler(priority = EventPriority.HIGHEST)
     public void onkick(ServerKickEvent event) {
         if (Lang.ENABLEKICKMESSAGE.equals("true")) {
             event.setKickReason(Lang.KICKMESSAGE.replace("&", "§"));

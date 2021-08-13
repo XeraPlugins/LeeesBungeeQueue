@@ -1,9 +1,30 @@
-# LeeesBungeeQueue V4.1.5
-# Make the main server the default one you login to
-# and then it should work if it doesnt add me on discord for help
-# my discord is Leee#9594 add to ask any questions
-# READ ME: all colours are orange by default just add & and colour
-# to change the colours to your liking
+# LeeesBungeeQueue V4.2.0
+#make sure to follow the tutorial on the github
+#it tells you everything you need to do
+#https://github.com/XeraPlugins/LeeesBungeeQueue
+
+
+#IMPORTANT DO THIS FIRST
+#these are all the important configuration
+#options that you should do first in order
+#to have the plugin work properly
+
+#this is the queue server where players
+#will wait to be put on the main server
+QUEUESERVER: "queue"
+#make this the name of the main server
+#where the players play on etc
+MAINSERVER: "7b7t"
+#set this to false if your a premium server
+#premium means online mode using mojangs authentication
+ENABLEAUTHSERVER: "true"
+AUTHSERVER: "auth"
+#server to send the players to after queue
+AFTERQUEUE: "auth"
+#Max players allowed onto main server
+#before the queue is triggered
+MAINSERVERSLOTS: 150
+
 
 #Username regex
 REGEX: "[a-zA-Z0-9_]*"
@@ -19,11 +40,14 @@ QUEUEPOSITION: "&6Position in queue: &l<position>"
 ENABLEKICKMESSAGE: "false"
 KICKMESSAGE: "&6You have lost connection to the server"
 SERVERDOWNKICKMESSAGE: "&b7b&37t &6is down please try again later :("
+
+
 #set this to false if you want it to kick players from the
 #server when the main server goes down
 #if its set to true itll pause the queue and let players
 #rejoin and wait in queue until the main server is online
 CONNECTTOQUEUEWHENDOWN: "true"
+
 
 #this shows the queue size when you hover over the ping on the server list
 SERVERPINGINFOENABLE: "true"
@@ -33,79 +57,68 @@ SERVERPINGINFO:
   - "&6Regular: &l%regular%"
   - "&6Total in queue: &l%totalinqueue%"
   - "&6Max players: &l%maxplayers%"
-CUSTOMPROTOCOL: "&b7b&37t &61.8.x to 1.16.x"
+CUSTOMPROTOCOL: "&b7b&37t &61.8.x to 1.17.x"
 ENABLEMOTD: "true"
 MOTD: "&b7b&37t &6Queue Size: Prio: &l%priosize% &6Reg: &l%regsize% &6Total: &l%total% &6Max: &l%maxplayers%"
 ENABLERANDOMMOTD: "true"
 RANDOMMOTDS:
   - "&b7b&37t &6LICK MY BALLS Regular: &l%regsize%"
   - "&b7b&37t &6fuck you cunt Priority: &l%priosize%"
-  - "&b7b&37t &6suck my cock"
-  - "&b7b&37t &6Infinium on Top"
-  - "&b7b&37t &6@Leee Ping hurts please add a ping role choice ;-;"
-  - "&b7b&37t &6penis equals happiness"
-  - "&b7b&37t &6defiance on top"
-  - "&b7b&37t &6tough can be tough"
-  - "&b7b&37t &6I support child labour"
-  - "&b7b&37t &6ur a pedo"
-  - "&b7b&37t &6OVH stands for OVerHeating"
-  - "&b7b&37t &6Bro why is my ca Dogwater"
-  - "&b7b&37t &6look behind you"
-  - "&b7b&37t &6i invest in bitcoin to buy mcchicken"
-  - "&b7b&37t &6Kionononononononononononon2"
-  - "&b7b&37t &6Snow fear? more like Drink Beer"
-  - "&b7b&37t &6FireWork Team X RCP On Top!"
-  - "&b7b&37t &6Max is Ninja buaaaa"
-  - "&b7b&37t &6i diagnose you with gay"
-  - "&b7b&37t &6taco taco taco taco taco"
-  - "&b7b&37t &6taco taco taco fireWORK"
-  - "&b7b&37t &6leee is my senpai"
-  - "&b7b&37t &6fuck legion"
-  - "&b7b&37t &6LEEE IF YOU SEE THIS JOIN THE CALL. BoonoBoi, Cubebuilder, 254n-m"
-  - "&b7b&37t &6254n_m Hes a god."
-  - "&b7b&37t &6error"
-  - "&b7b&37t &6you are perminantly banned from this server"
-  - "&b7b&37t &6Wait i can talk if i just do this ? @Leee"
-  - "&b7b&37t &a&lIMPERIUM ANTI &4&lNEWFAGS"
-  - "&b7b&37t &6that is very poggers"
-  - "&b7b&37t &6fuck you"
-  - "&b7b&37t &ataco Taco taco taco FireWORK Team On Top!"
-  - "&b7b&37t &6Leee is a God"
-  - "&b7b&37t &61589299 2578404 is my stash"
-  - "&b7b&37t &6I own you and all"
-  - "&b7b&37t &6dont join!!! Your base was griefed!!! Ull be sad!!!"
-  - "&b7b&37t &6lmao u mad?"
-  - "&b7b&37t &6no you has been backdoored"
-  - "&b7b&37t &6piko pal k lee"
-  - "&b7b&37t &6cat is gay"
-  - "&b7b&37t &6there is a pickle way too fucking deep in someones ass right now."
-  - "&b7b&37t &6this server has been blacklisted by Mojang."
-  - "&b7b&37t &6eggfruit"
-  - "&b7b&37t &6Free kits at 0 0!"
-  - "&b7b&37t &6blizzard owns u"
-  - "&b7b&37t &632ks at 0 0!"
-  - "&b7b&37t &6illigals at 16882827 467782"
-
-#Set the queue servers name that is in the bungee config.yml
-#Note that the main server is always the one you login to first
-#The main server server is the one that has a queue to protect it
-#make sure you set the default server in bungee config.yml correctly
-QUEUESERVER: "queue"
-MAINSERVER: "7b7t"
-#set this to false if your a premium server
-ENABLEAUTHSERVER: "true"
-AUTHSERVER: "auth"
-#server to send the players to after queue
-AFTERQUEUE: "auth"
+  - "&b7b&37t &6If you lag or crash my server i will kill you im not joking - Leee"
+  - "&b7b&37t &6wwe dupe"
+  - "&b7b&37t &62l2c.org"
+  - "&b7b&37t &6hola españoles"
+  - "&b7b&37t &6[User] is now an operator"
+  - "&b7b&37t &6ñññññññññññ"
+  - "&b7b&37t &6?"
+  - "&b7b&37t &6minecraft r34 sex dupe added!"
+  - "&b7b&37t &6NightmareZ is really a Nightmare"
+  - "&b7b&37t &6qbasty is (insert insult here)"
+  - "&b7b&37t &6SEXOOOO 7b7t on top"
+  - "&b7b&37t &6TFB IS go0d"
+  - "&bTCPShield bandwidth limit reached Upgrade at tcpshield.com"
+  - "&b7b&37t &6Leee has schizophrenia - nigtardo69"
+  - "&b7b&37t &6sorry but lee is gay so you are unable to connect to this server"
+  - "&b7b&37t &62b2t sucks, join 7b7t!!11"
+  - "&b7b&37t &6admin password is : Admin12345 Admin12345"
+  - "&b7b&37t &6map reset in 23 minutes"
+  - "&b7b&37t &6consume the piss chalice"
+  - "&b7b&37t &6i like having kids"
+  - "&4cannot connect to server"
+  - "&b7b&37t &6ok this is me this is my own piss"
+  - "&b7b&37t &6i like abandoning my wife and kids for 1 dollar"
+  - "&b7b&37t &6I am Mirillis member i am stupid"
+  - "&b7b&37t &6if u see this gay"
+  - "&b7b&37t &6leee please say SEXOOOO"
+  - "&b7b&37t &6i like kids"
+  - "&b7b&37t &6I hate drivr3joe"
+  - "&b7b&37t &6Fucking newfags in 0 0 since 2021"
+  - "&b7b&37t &6254n_m=GOD"
+  - "&b7b&37t &6Obama Hamburger sussy balls"
+  - "&b7b&37t &6join today for free kits and bitches!"
+  - "&b7b&37t &6my dad said i was drunk so i said i am a sussy baka"
+  - "&b7b&37t &6Cord of my base -34546 45 34457"
+  - "&b7b&37t &6Your a hoe."
+  - "&b7b&37t &6who trades illegals? /msg"
+  - "&b7b&37t &6imagine reading motds"
+  - "&b7b&37t &6drink it all NOHOHOHO"
+  - "&b7b&37t &6adquiere una monster es la nueva monster simon c mamo no olvides adquirir la nueva monster"
+  - "&b7b&37t &6popbobsexdupe is real!!!!!!!!!!!"
+  - "&b7b&37t &6BLACK CREEPER ON TOPA"
+  - "&b7b&37t &6cpvp at 12 fps"
+  - "&b7b&37t &6leee if u see this join vc"
+  - "&b7b&37t &6it actually tastes surprisingly good!"
+  - "&b7b&37t &6Pou owns u and all"
+  - "&b7b&37t &6cpvp is beautiful"
+  - "&b7b&37t &6Paper Airplane Go Zoooom"
+  - "&b7b&37t &6lee has a minor addiction to buses and trains"
+  - "&b7b&37t &6Crackers On Top!"
 
 
 #Connecting to server message use <server> if you want it
 #to just use the name of the default server
 JOININGMAINSERVER: "&6Connecting to 7b7t..."
 
-
-#Max players allowed onto main server
-MAINSERVERSLOTS: 150
 
 #set this to true if you wanna make the
 #max players appear as whatever number you want
@@ -115,6 +128,7 @@ QUEUESERVERSLOTS: 10000
 
 #Queue move delay in miliseconds default is 2000ms
 #please note this only guaranteed to not have issues 2000ms and higher
+#so i do not suggest changing this in anyway
 QUEUEMOVEDELAY: 2000
 
 

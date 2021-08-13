@@ -1,8 +1,8 @@
 name: LeeesBungeeQueue
-version: 4.1.5
+version: 4.2.0
 api-version: 1.16
 main: Leees.Bungee.Queue.Bukkit.Main
 author: Nate Legault
 authors: [Nate, Legault]
 description: Bukkit companion plugin for LeeesBungeeQueue
-website: https://www.6b6t.org
+website: https://www.xera.ca
