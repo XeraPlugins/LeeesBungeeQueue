@@ -269,11 +269,7 @@ public class LeeesBungeeQueue extends Plugin {
             }
         }, Lang.QUEUEMOVEDELAY, Lang.QUEUEMOVEDELAY, TimeUnit.MILLISECONDS);
         //moves the queue when someone logs off the main server on an interval set in the bungeeconfig.yml
-
-            try {
-                getProxy().getScheduler().schedule(this, Events::moveQueue, Lang.QUEUEMOVEDELAY, Lang.QUEUEMOVEDELAY, TimeUnit.MILLISECONDS);
-            } catch (NoSuchElementException ignored) {
-            }
+        getProxy().getScheduler().schedule(this, Events::moveQueue, 2000, 2000, TimeUnit.MILLISECONDS);
         //moves the queue when someone logs off the main server on an interval set in the bungeeconfig.yml
         try {
             getProxy().getScheduler().schedule(this, Events::CheckIfMainServerIsOnline,500, 500, TimeUnit.MILLISECONDS);
