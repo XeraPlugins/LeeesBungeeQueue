@@ -17,6 +17,7 @@ import net.md_5.bungee.api.plugin.Plugin;
 import net.md_5.bungee.config.Configuration;
 import net.md_5.bungee.config.ConfigurationProvider;
 import net.md_5.bungee.config.YamlConfiguration;
+import org.apache.commons.lang.ObjectUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 
@@ -269,7 +270,14 @@ public class LeeesBungeeQueue extends Plugin {
             }
         }, Lang.QUEUEMOVEDELAY, Lang.QUEUEMOVEDELAY, TimeUnit.MILLISECONDS);
         //moves the queue when someone logs off the main server on an interval set in the bungeeconfig.yml
-        getProxy().getScheduler().schedule(this, Events::moveQueue, 2000, 2000, TimeUnit.MILLISECONDS);
+        try {
+            getProxy().getScheduler().schedule(this, Events::moveQueue, 2000, 2000, TimeUnit.MILLISECONDS);
+        } catch (NoSuchElementException exception) {
+            priorityqueue.clear();
+            regularqueue.clear();
+            LeeesBungeeQueue.getInstance().getRegularqueue().clear();
+            LeeesBungeeQueue.getInstance().getPriorityqueue().clear();
+    }
         //moves the queue when someone logs off the main server on an interval set in the bungeeconfig.yml
         try {
             getProxy().getScheduler().schedule(this, Events::CheckIfMainServerIsOnline,500, 500, TimeUnit.MILLISECONDS);
