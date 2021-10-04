@@ -6,6 +6,7 @@ very easy to configure just make sure you have these things on bungeecord
 or waterfall set properly below 
 
 NOTE: the plugin has no velocity support but works perfectly with snap on velocity i myself use velocity for my server and can testify this will work with snap perfectly fine
+https://forums.velocitypowered.com/t/snap-run-bungeecord-plugins-on-velocity/608
 
 NOTE: if you need a plugin to make a queue server you can place this same jar file in any paper / spigot server and itll act as a plugin to prevent player movement, set gamemode, set world and exact specific coordinates you want all the players to be stuck at
 
