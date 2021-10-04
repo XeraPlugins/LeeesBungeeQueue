@@ -15,6 +15,8 @@ import net.md_5.bungee.api.event.*;
 import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.event.EventHandler;
 import net.md_5.bungee.event.EventPriority;
+import org.bukkit.entity.Player;
+
 /**
  * Events
  */
@@ -34,6 +36,7 @@ public class Events implements Listener {
             ple.setCancelled(true);
         }
     }
+
     public static void CheckIfMainServerIsOnline() {
         try {
             Socket s = new Socket(ProxyServer.getInstance().getServerInfo(Lang.MAINSERVER).getAddress().getAddress(), ProxyServer.getInstance().getServerInfo(Lang.MAINSERVER).getAddress().getPort());
@@ -42,9 +45,10 @@ public class Events implements Listener {
             mainonline = true;
         } catch (Throwable t) {
             mainonline = false;
-            System.out.println(ChatColor.translateAlternateColorCodes('&', "&6[LBQ] Your main server is offline please check your config" ));
+            System.out.println(ChatColor.translateAlternateColorCodes('&', "&6[LBQ] Your main server is offline please check your config"));
         }
     }
+
     public static void CheckIfQueueServerIsOnline() {
         try {
             Socket s = new Socket(ProxyServer.getInstance().getServerInfo(Lang.QUEUESERVER).getAddress().getAddress(), ProxyServer.getInstance().getServerInfo(Lang.QUEUESERVER).getAddress().getPort());
@@ -53,7 +57,7 @@ public class Events implements Listener {
             queueonline = true;
         } catch (Throwable t) {
             queueonline = false;
-            System.out.println(ChatColor.translateAlternateColorCodes('&', "&6[LBQ] Your queue server is offline please check your config" ));
+            System.out.println(ChatColor.translateAlternateColorCodes('&', "&6[LBQ] Your queue server is offline please check your config"));
         }
     }
 
@@ -66,7 +70,7 @@ public class Events implements Listener {
                 authonline = true;
             } catch (Throwable t) {
                 authonline = false;
-                System.out.println(ChatColor.translateAlternateColorCodes('&', "&6[LBQ] Your auth server is offline please check your config" ));
+                System.out.println(ChatColor.translateAlternateColorCodes('&', "&6[LBQ] Your auth server is offline please check your config"));
             }
         } else {
             authonline = true;
@@ -130,11 +134,11 @@ public class Events implements Listener {
                 }
             } else {
                 if (Lang.CONNECTTOQUEUEWHENDOWN.contains("true")) {
-                     if (event.getPlayer().hasPermission(Lang.QUEUEPRIORITYPERMISSION)) {
-                         priority.add(event.getPlayer().getUniqueId());
-                     } else {
-                         regular.add(event.getPlayer().getUniqueId());
-                     }
+                    if (event.getPlayer().hasPermission(Lang.QUEUEPRIORITYPERMISSION)) {
+                        priority.add(event.getPlayer().getUniqueId());
+                    } else {
+                        regular.add(event.getPlayer().getUniqueId());
+                    }
                 } else {
                     event.getPlayer().disconnect(Lang.SERVERDOWNKICKMESSAGE.replace("&", "§"));
                 }
@@ -159,7 +163,6 @@ public class Events implements Listener {
             player.sendMessage(ChatColor.GOLD + Lang.SERVERISFULLMESSAGE.replace("&", "§"));
             // Store the data concerning the player's destination
             LeeesBungeeQueue.getInstance().getPriorityqueue().put(player.getUniqueId(), originalTarget);
-            return;
         } else if (!e.getPlayer().hasPermission(Lang.QUEUEBYPASSPERMISSION) && !e.getPlayer().hasPermission(Lang.QUEUEPRIORITYPERMISSION)) {
             if (!regular.contains(player.getUniqueId()))
                 return;
@@ -173,28 +176,22 @@ public class Events implements Listener {
             player.sendMessage(ChatColor.GOLD + Lang.SERVERISFULLMESSAGE.replace("&", "§"));
             // Store the data concerning the player's destination
             LeeesBungeeQueue.getInstance().getRegularqueue().put(player.getUniqueId(), originalTarget);
-            return;
         }
     }
 
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onDisconnect(PlayerDisconnectEvent e) {
-        //if a play in queue logs off it removes them and their position so when they relog
-        //they get sent to the back of the line and have to wait through the queue again yeah
-            try {
-                if (e.getPlayer().getServer().getInfo().getName().equalsIgnoreCase(Lang.QUEUESERVER)) {
-                    e.getPlayer().setReconnectServer(ProxyServer.getInstance()
-                            .getServerInfo(LeeesBungeeQueue.getInstance().getPriorityqueue().get(e.getPlayer().getUniqueId())));
-                    e.getPlayer().setReconnectServer(ProxyServer.getInstance()
-                            .getServerInfo(LeeesBungeeQueue.getInstance().getRegularqueue().get(e.getPlayer().getUniqueId())));
-                }
-                LeeesBungeeQueue.getInstance().getPriorityqueue().remove(e.getPlayer().getUniqueId());
+        if (e.getPlayer().getServer().getInfo().getName().equalsIgnoreCase(Lang.QUEUESERVER)) {
+            if (!e.getPlayer().hasPermission(Lang.QUEUEPRIORITYPERMISSION)) {
+                e.getPlayer().setReconnectServer(ProxyServer.getInstance().getServerInfo(LeeesBungeeQueue.getInstance().getRegularqueue().get(e.getPlayer().getUniqueId())));
                 LeeesBungeeQueue.getInstance().getRegularqueue().remove(e.getPlayer().getUniqueId());
-                priority.remove(e.getPlayer().getUniqueId());
                 regular.remove(e.getPlayer().getUniqueId());
+            } else {
+                e.getPlayer().setReconnectServer(ProxyServer.getInstance().getServerInfo(LeeesBungeeQueue.getInstance().getPriorityqueue().get(e.getPlayer().getUniqueId())));
+                LeeesBungeeQueue.getInstance().getPriorityqueue().remove(e.getPlayer().getUniqueId());
+                priority.remove(e.getPlayer().getUniqueId());
             }
-            catch(NullPointerException ignored) {
-            }
+        }
     }
 
     public static void moveQueue() {
@@ -204,10 +201,7 @@ public class Events implements Listener {
         //gets a random number then if the number is less then or equal to the odds set in
         //this bungeeconfig.yml it will add a priority player if its anything above the odds then
         //a non priority player gets added to the main server
-        //Random rn = new Random();
-        //for (int i = 0; i < 100; i++) {
-            //int answer = rn.nextInt(10) + 1;
-        if (Events.authonline == true && Events.mainonline == true && Events.queueonline == true) {
+        if (Events.authonline && Events.mainonline && Events.queueonline) {
             if (!LeeesBungeeQueue.getInstance().getPriorityqueue().isEmpty()) {
                 if (Lang.MAINSERVERSLOTS <= ProxyServer.getInstance().getOnlineCount() - LeeesBungeeQueue.getInstance().getRegularqueue().size() - LeeesBungeeQueue.getInstance().getPriorityqueue().size())
                     return;

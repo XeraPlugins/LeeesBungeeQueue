@@ -1,4 +1,4 @@
-# LeeesBungeeQueue V4.2.1
+# LeeesBungeeQueue V4.2.2
 #make sure to follow the tutorial on the github
 #it tells you everything you need to do
 #https://github.com/XeraPlugins/LeeesBungeeQueue
@@ -23,7 +23,7 @@ AUTHSERVER: "auth"
 AFTERQUEUE: "auth"
 #Max players allowed onto main server
 #before the queue is triggered
-MAINSERVERSLOTS: 150
+MAINSERVERSLOTS: 230
 
 
 #Username regex
