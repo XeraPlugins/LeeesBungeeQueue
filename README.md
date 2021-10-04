@@ -12,7 +12,7 @@ NOTE: if you need a plugin to make a queue server you can place this same jar fi
 
 NOTE: it is recommended to use Waterfall and not bone stock bungeecord with this plugin (waterfall forks work fine) if you have an issue with a specific waterfall fork please let me know and ill see whats going on otherwise please use regular waterfall https://papermc.io/downloads#Waterfall
 
-If you would like to donate to keep me motivated to keep this project up to date you can donate at: http://donate.7b7t.me or my paypal email is nate4@xera.ca
+If you would like to donate to keep me motivated to keep this project up to date you can donate at: https://donate.7b7t.me or my paypal email is nate2@xera.ca
 
 ```
 
