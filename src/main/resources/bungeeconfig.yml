@@ -1,4 +1,4 @@
-# LeeesBungeeQueue V4.3.0
+# LeeesBungeeQueue V5.0.0
 #make sure to follow the tutorial on the github
 #it tells you everything you need to do
 #https://github.com/XeraPlugins/LeeesBungeeQueue
@@ -23,7 +23,7 @@ AUTHSERVER: "auth"
 AFTERQUEUE: "auth"
 #Max players allowed onto main server
 #before the queue is triggered
-MAINSERVERSLOTS: 230
+MAINSERVERSLOTS: 300
 
 
 #Username regex
@@ -124,13 +124,6 @@ JOININGMAINSERVER: "&6Connecting to 7b7t..."
 #max players appear as whatever number you want
 ENABLEQUEUESERVERSLOTS: "true"
 QUEUESERVERSLOTS: 10000
-
-
-#this feature is enabled by default
-#it puts players in queue when they login
-#to prevent mass raids from crashing your main
-#server set to false to disable it
-ALWAYSQUEUE: "true"
 
 
 #Permissions

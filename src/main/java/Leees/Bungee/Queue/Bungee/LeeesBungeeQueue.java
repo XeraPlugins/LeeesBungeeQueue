@@ -277,7 +277,7 @@ public class LeeesBungeeQueue extends Plugin {
             regularqueue.clear();
             LeeesBungeeQueue.getInstance().getRegularqueue().clear();
             LeeesBungeeQueue.getInstance().getPriorityqueue().clear();
-    }
+        }
         //moves the queue when someone logs off the main server on an interval set in the bungeeconfig.yml
         try {
             getProxy().getScheduler().schedule(this, Events::CheckIfMainServerIsOnline,500, 500, TimeUnit.MILLISECONDS);
