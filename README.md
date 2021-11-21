@@ -18,21 +18,10 @@ If you would like to donate to keep me motivated to keep this project up to date
 
 Waterfall / Bungeecord config.yml ->
 
-please note only use the plugin
-with main or auth in priorities if
-you have alwaysqueue in the lbq config set to false otherwise
+please note NEVER use the plugin
+with main or auth in priorities
 make the only server in priorities is the queue server
-EXAMPLE PREMIUM SERVERS:
-priorities:
-  - Main
-
-EXAMPLE CRACKED SERVERS:
- priorities:
-  - auth
-  
- If you have alwaysqueue set to true in the lbq config
- which it is set to by default then make
- sure you have this set like this
+EXAMPLE:
  priorities:
  - queue
 
