@@ -125,27 +125,18 @@ public class Events implements Listener {
 
 
     public void addplayertoqueue(UUID playeruuid, String originaltarget, ProxiedPlayer playername) {
-        TimeUnit time = TimeUnit.SECONDS;
         if (playername.hasPermission(Lang.QUEUEPRIORITYPERMISSION)) {
             playername.sendMessage(Lang.SERVERISFULLMESSAGE.replace('&', '§'));
             playername.setTabHeader(
                     new ComponentBuilder(Lang.HEADERPRIORITY.replace("&", "§").replace("<position>", "None").replace("<wait>", "None")).create(),
                     new ComponentBuilder(Lang.FOOTERPRIORITY.replace("&", "§").replace("<position>", "None").replace("<wait>", "None")).create());
-            ProxyServer.getInstance().getScheduler().schedule(this.plugin, new Runnable() {
-                public void run() {
                     LeeesBungeeQueue.getInstance().getPriorityqueue().put(playeruuid, originaltarget);
-                }
-            }, 5, TimeUnit.SECONDS);
         } else {
             playername.sendMessage(Lang.SERVERISFULLMESSAGE.replace('&', '§'));
             playername.setTabHeader(
                     new ComponentBuilder(Lang.HEADER.replace("&", "§").replace("<position>", "None").replace("<wait>", "None")).create(),
                     new ComponentBuilder(Lang.FOOTER.replace("&", "§").replace("<position>", "None").replace("<wait>", "None")).create());
-            ProxyServer.getInstance().getScheduler().schedule(this.plugin, new Runnable() {
-                public void run() {
-                    LeeesBungeeQueue.getInstance().getRegularqueue().put(playeruuid, originaltarget);
-                }
-            }, 5, TimeUnit.SECONDS);
+            LeeesBungeeQueue.getInstance().getRegularqueue().put(playeruuid, originaltarget);
         }
     }
     @EventHandler(priority = EventPriority.HIGHEST)
