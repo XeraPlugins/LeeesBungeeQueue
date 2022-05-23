@@ -1,4 +1,4 @@
-# LeeesBungeeQueue V5.1.0
+# LeeesBungeeQueue V5.1.1
 #make sure to follow the tutorial on the github
 #it tells you everything you need to do
 #https://github.com/XeraPlugins/LeeesBungeeQueue
@@ -56,7 +56,9 @@ SERVERPINGINFO:
   - "&6Priority: &l%priority%"
   - "&6Regular: &l%regular%"
   - "&6Total in queue: &l%totalinqueue%"
-  - "&6Max players: &l%maxplayers%"
+  - "&6Max players on main server: &l%maxplayers%"
+  - "&6Donate to recieve Priority"
+  - "&6Queue at &chttps://donate.8b8t.me"
 CUSTOMPROTOCOL: "&18b&98t &61.8.x to 1.18.x"
 ENABLEMOTD: "true"
 MOTD: "&18b&98t &6Queue Size: Prio: &l%priosize% &6Reg: &l%regsize% &6Total: &l%total% &6Max: &l%maxplayers%"
