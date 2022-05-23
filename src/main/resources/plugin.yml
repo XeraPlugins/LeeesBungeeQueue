@@ -1,6 +1,6 @@
 name: LeeesBungeeQueue
-version: 5.0.1
-api-version: 1.17
+version: 5.1.0
+api-version: 1.18
 main: Leees.Bungee.Queue.Bukkit.Main
 author: Nate Legault
 authors: [Nate, Legault]

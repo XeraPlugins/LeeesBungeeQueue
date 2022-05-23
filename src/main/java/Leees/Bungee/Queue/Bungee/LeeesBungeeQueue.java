@@ -145,7 +145,7 @@ public class LeeesBungeeQueue extends Plugin {
                     }
                 }
             }
-        }, Lang.QUEUEMOVEDELAY, Lang.QUEUEMOVEDELAY, TimeUnit.MILLISECONDS);
+        }, 2000 , 2000, TimeUnit.MILLISECONDS);
 
         getProxy().getScheduler().schedule(this, () -> {
             if (Lang.POSITIONMESSAGEHOTBAR.equals("true")) {
@@ -174,7 +174,7 @@ public class LeeesBungeeQueue extends Plugin {
                     }
                 }
             }
-        }, Lang.QUEUEMOVEDELAY, Lang.QUEUEMOVEDELAY, TimeUnit.MILLISECONDS);
+        }, 2000, 2000, TimeUnit.MILLISECONDS);
 
         //updates the tablists for priority and regular queues
         getProxy().getScheduler().schedule(this, () -> {
@@ -222,7 +222,7 @@ public class LeeesBungeeQueue extends Plugin {
                     //TODO: handle exception
                 }
             }
-        }, Lang.QUEUEMOVEDELAY, Lang.QUEUEMOVEDELAY, TimeUnit.MILLISECONDS);
+        }, 2000, 2000, TimeUnit.MILLISECONDS);
 
         getProxy().getScheduler().schedule(this, () -> {
 
@@ -268,7 +268,7 @@ public class LeeesBungeeQueue extends Plugin {
                     //TODO: handle exception
                 }
             }
-        }, Lang.QUEUEMOVEDELAY, Lang.QUEUEMOVEDELAY, TimeUnit.MILLISECONDS);
+        }, 2000, 2000, TimeUnit.MILLISECONDS);
         //moves the queue when someone logs off the main server on an interval set in the bungeeconfig.yml
         try {
             getProxy().getScheduler().schedule(this, Events::moveQueue, 2000, 2000, TimeUnit.MILLISECONDS);

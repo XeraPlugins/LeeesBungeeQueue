@@ -1,4 +1,4 @@
-# LeeesBungeeQueue V5.0.1
+# LeeesBungeeQueue V5.1.0
 #make sure to follow the tutorial on the github
 #it tells you everything you need to do
 #https://github.com/XeraPlugins/LeeesBungeeQueue
@@ -14,7 +14,7 @@
 QUEUESERVER: "queue"
 #make this the name of the main server
 #where the players play on etc
-MAINSERVER: "7b7t"
+MAINSERVER: "8b8t"
 #set this to false if your a premium server
 #premium means online mode using mojangs authentication
 ENABLEAUTHSERVER: "true"
@@ -23,14 +23,14 @@ AUTHSERVER: "auth"
 AFTERQUEUE: "auth"
 #Max players allowed onto main server
 #before the queue is triggered
-MAINSERVERSLOTS: 300
+MAINSERVERSLOTS: 250
 
 
 #Username regex
 REGEX: "[a-zA-Z0-9_]*"
 
 #Server is full message
-SERVERISFULLMESSAGE: "&67b7t is full"
+SERVERISFULLMESSAGE: "&68b8t is full"
 
 
 #Position in queue message by default only sends in chat every 10 seconds
@@ -39,7 +39,7 @@ POSITIONMESSAGEHOTBAR: "false"
 QUEUEPOSITION: "&6Position in queue: &l<position>"
 ENABLEKICKMESSAGE: "false"
 KICKMESSAGE: "&6You have lost connection to the server"
-SERVERDOWNKICKMESSAGE: "&b7b&37t &6is down please try again later :("
+SERVERDOWNKICKMESSAGE: "&18b&98t &6is down please try again later :("
 
 
 #set this to false if you want it to kick players from the
@@ -52,72 +52,94 @@ CONNECTTOQUEUEWHENDOWN: "true"
 #this shows the queue size when you hover over the ping on the server list
 SERVERPINGINFOENABLE: "true"
 SERVERPINGINFO:
-  - "&b7b&37t &6Queue Info"
+  - "&18b&98t &6Queue Info"
   - "&6Priority: &l%priority%"
   - "&6Regular: &l%regular%"
   - "&6Total in queue: &l%totalinqueue%"
   - "&6Max players: &l%maxplayers%"
-CUSTOMPROTOCOL: "&b7b&37t &61.8.x to 1.17.x"
+CUSTOMPROTOCOL: "&18b&98t &61.8.x to 1.18.x"
 ENABLEMOTD: "true"
-MOTD: "&b7b&37t &6Queue Size: Prio: &l%priosize% &6Reg: &l%regsize% &6Total: &l%total% &6Max: &l%maxplayers%"
+MOTD: "&18b&98t &6Queue Size: Prio: &l%priosize% &6Reg: &l%regsize% &6Total: &l%total% &6Max: &l%maxplayers%"
 ENABLERANDOMMOTD: "true"
 RANDOMMOTDS:
-  - "&b7b&37t &6LICK MY BALLS Regular: &l%regsize%"
-  - "&b7b&37t &6fuck you cunt Priority: &l%priosize%"
-  - "&b7b&37t &6If you lag or crash my server i will kill you im not joking - Leee"
-  - "&b7b&37t &6wwe dupe"
-  - "&b7b&37t &62l2c.org"
-  - "&b7b&37t &6hola españoles"
-  - "&b7b&37t &6[User] is now an operator"
-  - "&b7b&37t &6ñññññññññññ"
-  - "&b7b&37t &6?"
-  - "&b7b&37t &6minecraft r34 sex dupe added!"
-  - "&b7b&37t &6NightmareZ is really a Nightmare"
-  - "&b7b&37t &6qbasty is (insert insult here)"
-  - "&b7b&37t &6SEXOOOO 7b7t on top"
-  - "&b7b&37t &6TFB IS go0d"
-  - "&bTCPShield bandwidth limit reached Upgrade at tcpshield.com"
-  - "&b7b&37t &6Leee has schizophrenia - nigtardo69"
-  - "&b7b&37t &6sorry but lee is gay so you are unable to connect to this server"
-  - "&b7b&37t &62b2t sucks, join 7b7t!!11"
-  - "&b7b&37t &6admin password is : Admin12345 Admin12345"
-  - "&b7b&37t &6map reset in 23 minutes"
-  - "&b7b&37t &6consume the piss chalice"
-  - "&b7b&37t &6i like having kids"
-  - "&4cannot connect to server"
-  - "&b7b&37t &6ok this is me this is my own piss"
-  - "&b7b&37t &6i like abandoning my wife and kids for 1 dollar"
-  - "&b7b&37t &6I am Mirillis member i am stupid"
-  - "&b7b&37t &6if u see this gay"
-  - "&b7b&37t &6leee please say SEXOOOO"
-  - "&b7b&37t &6i like kids"
-  - "&b7b&37t &6I hate drivr3joe"
-  - "&b7b&37t &6Fucking newfags in 0 0 since 2021"
-  - "&b7b&37t &6254n_m=GOD"
-  - "&b7b&37t &6Obama Hamburger sussy balls"
-  - "&b7b&37t &6join today for free kits and bitches!"
-  - "&b7b&37t &6my dad said i was drunk so i said i am a sussy baka"
-  - "&b7b&37t &6Cord of my base -34546 45 34457"
-  - "&b7b&37t &6Your a hoe."
-  - "&b7b&37t &6who trades illegals? /msg"
-  - "&b7b&37t &6imagine reading motds"
-  - "&b7b&37t &6drink it all NOHOHOHO"
-  - "&b7b&37t &6adquiere una monster es la nueva monster simon c mamo no olvides adquirir la nueva monster"
-  - "&b7b&37t &6popbobsexdupe is real!!!!!!!!!!!"
-  - "&b7b&37t &6BLACK CREEPER ON TOPA"
-  - "&b7b&37t &6cpvp at 12 fps"
-  - "&b7b&37t &6leee if u see this join vc"
-  - "&b7b&37t &6it actually tastes surprisingly good!"
-  - "&b7b&37t &6Pou owns u and all"
-  - "&b7b&37t &6cpvp is beautiful"
-  - "&b7b&37t &6Paper Airplane Go Zoooom"
-  - "&b7b&37t &6lee has a minor addiction to buses and trains"
-  - "&b7b&37t &6Crackers On Top!"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6OOOOOOOOOOO SPOOOKY"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &68000 Slots 1 server"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6Qbasty Sucks balls :kekw:"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &68b8t > 7b7t > 6b6t"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6Join the discord discord.8b8t.me"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6Tired of lag and crashes on 6b ?"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6Miss 7b7t.me ? Join today !"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6Bot this server if you can :eyes:"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6Do /dupe to dupe any item on 8b"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6fuck niggers 💪"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6House 1 was here lol and your mom with me too."
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6rAndon this rAndon"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6nukes are overrated."
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6last motds update: 9/11/2001"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &b&l Once you join in, there is no way back."
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6La grasa owns you"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6do /kill for free starter kits!"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6/kill dupe is the most op dupe"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6Perhaps downloading that client was not a good idea..."
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6Leee is Good, Leee is good uh uhhsdbghsahdbfsahdjfbhasd"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6Tangi client on top"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6shut up niggers"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6anti-racism"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6shut up mexican, and go back to the zoo"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6https://youtu.be/H6hgGIdLOpE"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6rats have dry balls"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6I swear I am not gay, He legit lookee like a girl"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6rats have balls?"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6woof is the best admin in 8b8t and u know it"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6Slovenia does exists"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6UwU soy furry quiero semen"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6RCP on top"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6GG @Sebasorova you just got lvl 20!"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6leee is a chicken eating nigger and should fucking slit his wrists"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6nigger monkeys on top"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6PK DOWN HAHA FAKE PK EZZZZ IM THE KING LOL IMAGINE 2022 JOIN DATE ALL THESE NEWGENS LAWL ALL N1S TEAM FACUNDO ON TOP EZZ"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6matthewcomputer on top"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6EZZZ EMP OWNS"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6qbastard is a bastard"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6nooooo i dont wanna become a fumo, actually being a fumo is fine i don't care anymore"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &68b8t = the best server anarchy better than 6b6t"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6pao has an obsesión with femboys"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6Messo_ owns spawn"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6I believe I can fly"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6gordo puta owns spawn"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6what?"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &68bitches8tools"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6White8123 is bad at pvp LOL"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6kys fucking ni"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6lAlekz is racist and is uncool"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6I own spawn - 🤓"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6ñ"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6most motds are not funny"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6so bad L"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6dont be black just do what michael Jackson did"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6Team Penguin GOD"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6+51 953 251 202 msg to get free blowjob"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6valenary own u"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6DPS on top"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6* insert group name here * on top!"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6RCP on top"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6Follow AmuraEz On twitch"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6RCP owning since 7b"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6your motd here"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6a reminder matthewcomputer on top"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6OMG its u fireWORK?!!?!!??!?!"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6penguinsex"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6want the 6b6t lobby world? check the pin in announcements on the 8b discord"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6honkers gonna honk"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6#FREEDOMCONVOY"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6Fuck Justin Trudeau #alberta"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6Imagine being from Calgary"
+  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6Bedrock IP: bedrock.8b8t.me Port: 19132"
 
 
 #Connecting to server message use <server> if you want it
 #to just use the name of the default server
-JOININGMAINSERVER: "&6Connecting to 7b7t..."
+JOININGMAINSERVER: "&6Connecting to 8b8t..."
 
 
 #set this to true if you wanna make the
@@ -125,6 +147,8 @@ JOININGMAINSERVER: "&6Connecting to 7b7t..."
 ENABLEQUEUESERVERSLOTS: "true"
 QUEUESERVERSLOTS: 10000
 
+#should players always be put in queue when they join
+ALWAYSQUEUE: "true"
 
 #Permissions
 #in order for queue bypass to work any accounts with the permission
@@ -138,14 +162,14 @@ ADMINPERMISSION: "queue.admin"
 #Queue server tablist configuration use <position> to show the current position of the player
 #and use <wait> to show the estimated wait time of t    he player(not very accurate yet)
 #this only shows when your in the queue waiting to join use a separate plugin for your main server
-HEADER: "\n&b7builders&37tools\n\n&67b7t is full\nPosition in queue: &l<position>\n&6Estimated time: &l<wait>\n"
+HEADER: "\n&18builders&98tools\n\n&68b8t is full\nPosition in queue: &l<position>\n&6Estimated time: &l<wait>\n"
 
-FOOTER: "\n   &6You can now donate to receive priority queue status, please visit donate.7b7t.me   \n\n&7contact: nate@xera.ca\n
-discussion: http://discord.7b7t.me\nwebsite: https://www.7b7t.me\nThese are the only official 7b7t websites and contacts\n"
+FOOTER: "\n   &6You can now donate to receive priority queue status, please visit donate.8b8t.me   \n\n&7contact: nate@xera.ca\n
+discussion: http://discord.8b8t.me\nwebsite: https://www.8b8t.me\nThese are the only official 8b8t websites and contacts\n"
 
 
 #configs for priority queue tablist
-HEADERPRIORITY: "\n&b7builders&37tools\n\n&67b7t is full\nPosition in queue: &l<position>\n&6Estimated time: &l<wait>\n"
+HEADERPRIORITY: "\n&18builders&98tools\n\n&68b8t is full\nPosition in queue: &l<position>\n&6Estimated time: &l<wait>\n"
 
 FOOTERPRIORITY: "\n   &6You have priority queue status please wait for an available slot on the server   \n\n&7contact: nate@xera.ca\n
-discussion: http://discord.7b7t.me\nwebsite: https://www.7b7t.me\nThese are the only official 7b7t websites and contacts\n"
+discussion: http://discord.8b8t.me\nwebsite: https://www.8b8t.me\nThese are the only official 8bt websites and contacts\n"
