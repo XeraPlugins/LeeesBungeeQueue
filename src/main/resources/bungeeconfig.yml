@@ -1,4 +1,4 @@
-# LeeesBungeeQueue V5.1.1
+# LeeesBungeeQueue V5.1.2
 #make sure to follow the tutorial on the github
 #it tells you everything you need to do
 #https://github.com/XeraPlugins/LeeesBungeeQueue
@@ -147,7 +147,7 @@ JOININGMAINSERVER: "&6Connecting to 8b8t..."
 #set this to true if you wanna make the
 #max players appear as whatever number you want
 ENABLEQUEUESERVERSLOTS: "true"
-QUEUESERVERSLOTS: 10000
+QUEUESERVERSLOTS: 8000
 
 #should players always be put in queue when they join
 ALWAYSQUEUE: "true"
