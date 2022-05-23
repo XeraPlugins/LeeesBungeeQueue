@@ -32,16 +32,16 @@ at the bottom of your bungeecord / waterfall config
 add the queue main and auth(only if your server is offline mode / cracked)
 like this example below:
 servers:
-  7b7t:
-    motd: '&b7b&37t &6Main Server'
+  8b8t:
+    motd: '&18b&98t &6Main Server'
     address: localhost:8401
     restricted: true
   queue:
-    motd: '&&b7b&37t &6Queue Server'
+    motd: '&18b&98t &6Queue Server'
     address: localhost:8402
     restricted: true
   auth:
-    motd: '&b7b&37t &6Auth Server'
+    motd: '&18b&98t &6Auth Server'
     address: localhost:8403
     restricted: true
 
@@ -56,7 +56,7 @@ in lbq to the exact name of the ones you set
 in the bungeecord config
 
 QUEUESERVER: "queue"
-MAINSERVER: "7b7t"
+MAINSERVER: "8b8t"
 #set this to false if your a premium server
 ENABLEAUTHSERVER: "true"
 AUTHSERVER: "auth"
