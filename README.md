@@ -12,6 +12,8 @@ NOTE: if you need a plugin to make a queue server you can place this same jar fi
 
 NOTE: it is recommended to use Waterfall and not bone stock bungeecord with this plugin (waterfall forks work fine) if you have an issue with a specific waterfall fork please let me know and ill see whats going on otherwise please use regular waterfall https://papermc.io/downloads#Waterfall
 
+NOTE: if your cracked heres the link to the modified version of AuthMeBungee addon: https://www.8b8t.me/files/AuthMeBungee-LBQ.jar
+
 If you would like to donate to keep me motivated to keep this project up to date you can donate at: https://donate.8b8t.me or my paypal email is nate2@xera.ca
 
 ```
@@ -64,4 +66,4 @@ AUTHSERVER: "auth"
 AFTERQUEUE: "auth"
 
 ```
-need extra help ? join our support discord: https://discord.gg/QFkeH5qaKQ
+need extra help ? watch the youtube video: https://youtu.be/mJN5vZjhqwI
