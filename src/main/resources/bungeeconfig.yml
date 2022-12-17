@@ -1,4 +1,4 @@
-# LeeesBungeeQueue V5.1.2
+#LeeesBungeeQueue V5.2.0
 #make sure to follow the tutorial on the github
 #it tells you everything you need to do
 #https://github.com/XeraPlugins/LeeesBungeeQueue
@@ -23,8 +23,18 @@ AUTHSERVER: "auth"
 AFTERQUEUE: "auth"
 #Max players allowed onto main server
 #before the queue is triggered
-MAINSERVERSLOTS: 250
+MAINSERVERSLOTS: 230
 
+#Antibot works by checking
+#if player has permission
+#antivpn.bypass if they do not have
+#the permission they get kicked
+#use this plugin to set up A
+#antibot verification website:
+#https://github.com/Leeewith3Es/LeeesWhitelistPlugin
+#otherwise set this to false
+ANTIBOT: "true"
+ANTIBOTMESSAGE: "&6[&18builders&98tools&6]\nDisconnected for bot\nIf you are not a bot please visit &chttps://antibot.8b8t.me\n&6Si no eres un robot porfavor visita &chttps://antibot.8b8t.me"
 
 #Username regex
 REGEX: "[a-zA-Z0-9_]*"
@@ -57,87 +67,107 @@ SERVERPINGINFO:
   - "&6Regular: &l%regular%"
   - "&6Total in queue: &l%totalinqueue%"
   - "&6Max players on main server: &l%maxplayers%"
-  - "&6Donate to recieve Priority"
-  - "&6Queue at &chttps://donate.8b8t.me"
-CUSTOMPROTOCOL: "&18b&98t &61.8.x to 1.18.x"
+  - "&6Donate to recieve priority queue at &chttps://donate.8b8t.me"
+CUSTOMPROTOCOL: "&18b&98t &61.8.x to 1.19.x"
 ENABLEMOTD: "true"
 MOTD: "&18b&98t &6Queue Size: Prio: &l%priosize% &6Reg: &l%regsize% &6Total: &l%total% &6Max: &l%maxplayers%"
 ENABLERANDOMMOTD: "true"
 RANDOMMOTDS:
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6OOOOOOOOOOO SPOOOKY"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &68000 Slots 1 server"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6Qbasty Sucks balls :kekw:"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &68b8t > 7b7t > 6b6t"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6Join the discord discord.8b8t.me"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6Tired of lag and crashes on 6b ?"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6Miss 7b7t.me ? Join today !"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6Bot this server if you can :eyes:"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6Do /dupe to dupe any item on 8b"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6fuck niggers 💪"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6House 1 was here lol and your mom with me too."
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6rAndon this rAndon"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6nukes are overrated."
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6last motds update: 9/11/2001"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &b&l Once you join in, there is no way back."
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6La grasa owns you"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6do /kill for free starter kits!"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6/kill dupe is the most op dupe"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6Perhaps downloading that client was not a good idea..."
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6Leee is Good, Leee is good uh uhhsdbghsahdbfsahdjfbhasd"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6Tangi client on top"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6shut up niggers"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6anti-racism"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6shut up mexican, and go back to the zoo"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6https://youtu.be/H6hgGIdLOpE"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6rats have dry balls"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6I swear I am not gay, He legit lookee like a girl"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6rats have balls?"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6woof is the best admin in 8b8t and u know it"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6Slovenia does exists"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6UwU soy furry quiero semen"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6RCP on top"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6GG @Sebasorova you just got lvl 20!"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6leee is a chicken eating nigger and should fucking slit his wrists"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6nigger monkeys on top"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6PK DOWN HAHA FAKE PK EZZZZ IM THE KING LOL IMAGINE 2022 JOIN DATE ALL THESE NEWGENS LAWL ALL N1S TEAM FACUNDO ON TOP EZZ"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6matthewcomputer on top"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6EZZZ EMP OWNS"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6qbastard is a bastard"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6nooooo i dont wanna become a fumo, actually being a fumo is fine i don't care anymore"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &68b8t = the best server anarchy better than 6b6t"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6pao has an obsesión with femboys"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6Messo_ owns spawn"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6I believe I can fly"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6gordo puta owns spawn"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6what?"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &68bitches8tools"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6White8123 is bad at pvp LOL"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6kys fucking ni"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6lAlekz is racist and is uncool"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6I own spawn - 🤓"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6ñ"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6most motds are not funny"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6so bad L"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6dont be black just do what michael Jackson did"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6Team Penguin GOD"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6+51 953 251 202 msg to get free blowjob"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6valenary own u"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6DPS on top"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6* insert group name here * on top!"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6RCP on top"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6Follow AmuraEz On twitch"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6RCP owning since 7b"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6your motd here"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6a reminder matthewcomputer on top"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6OMG its u fireWORK?!!?!!??!?!"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6penguinsex"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6want the 6b6t lobby world? check the pin in announcements on the 8b discord"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6honkers gonna honk"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6#FREEDOMCONVOY"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6Fuck Justin Trudeau #alberta"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6Imagine being from Calgary"
-  - "&18b                                            &a[1.8.x to 1.18.x]    &98t   &6Bedrock IP: bedrock.8b8t.me Port: 19132"
-
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &68t   &6Praise The Sun"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6mir is genius"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6El mismisimo Pablo emilio escobar"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6MirWasHere"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6do not talk to mir under any circumstances"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6this was cooler 1 year ago"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6firawft sucks"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6_Organik will find you, _Organik will kill you"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6I dont need kits, i need cats"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6onlypuppy7 likes to suck huge cock"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6n word"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &68b8t owns 6b6t!1!!"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6Jesse, necesitamos más crotolamo"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6fuck microsoft"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6Woofer"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6biden plays here"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6jesser where is the cocainer"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6insert very original motd here"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6free kit on 00"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6skeet skeet number uan chit"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &66b6t sucks"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6Hamburger"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6Osiris on top"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6RS on top"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6invite 2 skeet pls"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6Ohiocraft"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6https://www.youtube.com/watch?v=0hevhAHvY-A"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6RS have big pp"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6nixware sucks ass"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &68b8t #1 Anarchy server soon"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &cSr&aGokuto &fon &cY&fT"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6JustAndrea is taco women"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6BibleH4ck good"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6qbasty is gay"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6daynios on top!"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6pissmaster is a furry kek"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6your daily dose of autism can be found here!"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6buy donator for bedrock and illegal items"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6Leee got the white boy stare"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6Make 8b8t Great Again"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6Mir is better than cipher"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6where 32ks"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6free kits at 0 0"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6kill all furrys"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6stanlin exposed"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6I have cancer and severe autism"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6dont dm Smuki#6969"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6x: 103924 y: 53 z: 109"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6yesterday i was diagnosed with aids"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6kill all furrys ( that includes @Soaws  )"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6Don't dm Mir.#0001 at December 1 2022"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6how about we all stop fighting and we start building cocks"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6run leuxbackdoor 🤓"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &18b&b8b&f: &l&o&cThe merge biggest anarchy "
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6VENEZUELA ON TOP"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6DPS owns you"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6free owner if u join"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &68bee 8tee dot mi is the best minecraft server"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6LEEEXSTALIN"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6CHANGE THE SERVER PICTURE ITS BAD"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6danigod el ser mas inteligente del mundo"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6basic bitches join dps"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6Woofer is the best 8b8t player"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6just andrea is simp"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6grassers best group"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6let's buy 6b6t!"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6Mir is the best 8b8t pvper"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6Family Friendly Server"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6join mek gang"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6quit anarchy move to vanilla"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6any group other than dps on top"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6GRINGOS IGUEPUTAS"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6£€€€w!th3€€€"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &61.13+ is shit"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6Sweden, the best nation in the world idgf"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6join 8b8t discord server for free kits"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6give kurtz a dick"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6updated to 1.19"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6SOPLAMONDA"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6lAlekz best 7b player ever"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6join 8b8t discord to get friends"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6dont dm SamWithUke ✨#2357"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6CRACKERS came back"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6Woofer is the best 8b8t player ever"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6don't dm Mir at 8b8t discord server"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6CRACKERS CAME BACK"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6welcome to Ohio"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6i AM THE BESt!!!!111"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6mention#0001"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6I left my girlfriend so I could play 8b8t quietly."
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6i do not shower but i can crystal pvp!"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6im a free thinker, i make up situations in my head and instantly believe them"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6bird flu? yeah they tend to do that"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6Leee was here ;)"
+  - "&18b                                            &a[1.8.x to 1.19.x]    &98t   &6suck my motherfucking dick -Infisrael#1337"
 
 #Connecting to server message use <server> if you want it
 #to just use the name of the default server
@@ -147,10 +177,15 @@ JOININGMAINSERVER: "&6Connecting to 8b8t..."
 #set this to true if you wanna make the
 #max players appear as whatever number you want
 ENABLEQUEUESERVERSLOTS: "true"
-QUEUESERVERSLOTS: 8000
+QUEUESERVERSLOTS: 3000
 
-#should players always be put in queue when they join
+
+#this feature is enabled by default
+#it puts players in queue when they login
+#to prevent mass raids from crashing your main
+#server set to false to disable it
 ALWAYSQUEUE: "true"
+
 
 #Permissions
 #in order for queue bypass to work any accounts with the permission
@@ -171,7 +206,7 @@ discussion: http://discord.8b8t.me\nwebsite: https://www.8b8t.me\nThese are the 
 
 
 #configs for priority queue tablist
-HEADERPRIORITY: "\n&18builders&98tools\n\n&68b8t is full\nPosition in queue: &l<position>\n&6Estimated time: &l<wait>\n"
+HEADERPRIORITY: "\n&18builders&98tools\n\n&67b7t is full\nPosition in queue: &l<position>\n&6Estimated time: &l<wait>\n"
 
 FOOTERPRIORITY: "\n   &6You have priority queue status please wait for an available slot on the server   \n\n&7contact: nate@xera.ca\n
-discussion: http://discord.8b8t.me\nwebsite: https://www.8b8t.me\nThese are the only official 8bt websites and contacts\n"
+discussion: http://discord.8b8t.me\nwebsite: https://www.8b8t.me\nThese are the only official 8b8t websites and contacts\n"

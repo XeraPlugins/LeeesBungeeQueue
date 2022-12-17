@@ -58,6 +58,7 @@ public class LeeesBungeeQueue extends Plugin {
         getProxy().getPluginManager().registerListener(this, new Events());
         getProxy().getPluginManager().registerListener(this, new PingEvent());
         logger.info("§9Scheduling tasks");
+
         //sends the position message and updates tab on an interval for non priority players and priority players in chat
         getProxy().getScheduler().schedule(this, () -> {
             if (!Lang.POSITIONMESSAGEHOTBAR.equals("true")) {

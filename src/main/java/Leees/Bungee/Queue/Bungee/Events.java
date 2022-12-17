@@ -1,15 +1,10 @@
 package Leees.Bungee.Queue.Bungee;
 
-import java.net.Proxy;
 import java.net.Socket;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import java.util.Map.Entry;
-import java.util.UUID;
-import java.util.concurrent.*;
 import java.util.concurrent.TimeUnit;
 
-import net.md_5.bungee.BungeeCord;
 import net.md_5.bungee.api.*;
 import net.md_5.bungee.api.chat.ComponentBuilder;
 import net.md_5.bungee.api.chat.TextComponent;
@@ -19,14 +14,8 @@ import net.md_5.bungee.api.event.*;
 import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.event.EventHandler;
 import net.md_5.bungee.event.EventPriority;
-import org.bukkit.Bukkit;
-import org.bukkit.Server;
-import org.bukkit.craftbukkit.v1_12_R1.entity.CraftEntity;
-import org.bukkit.entity.Player;
-import org.bukkit.plugin.Plugin;
 
 import static Leees.Bungee.Queue.Bungee.Lang.AFTERQUEUE;
-import static net.minecraft.server.v1_12_R1.PlayerSelector.getPlayer;
 
 /**
  * Events
@@ -94,36 +83,68 @@ public class Events implements Listener {
 
     @EventHandler(priority = EventPriority.HIGHEST)
     public void on(PostLoginEvent event) {
-        if (!Lang.ENABLEAUTHSERVER.contains("true")) {
-            if (mainonline && queueonline) {
-                if (!Lang.ALWAYSQUEUE.contains("true")) {
-                    if (ProxyServer.getInstance().getOnlineCount() <= Lang.MAINSERVERSLOTS)
-                        return;
-                    addplayertoqueue(event.getPlayer().getUniqueId(), AFTERQUEUE, event.getPlayer());
+        if (Lang.ANTIBOT.contains("true")) {
+            if (event.getPlayer().hasPermission("antivpn.bypass")) {
+                if (!Lang.ENABLEAUTHSERVER.contains("true")) {
+                    if (mainonline && queueonline) {
+                        if (!Lang.ALWAYSQUEUE.contains("true")) {
+                            if (ProxyServer.getInstance().getOnlineCount() <= Lang.MAINSERVERSLOTS)
+                                return;
+                            addplayertoqueue(event.getPlayer().getUniqueId(), AFTERQUEUE, event.getPlayer());
+                        } else {
+                            addplayertoqueue(event.getPlayer().getUniqueId(), AFTERQUEUE, event.getPlayer());
+                        }
+                    } else {
+                        event.getPlayer().disconnect(Lang.SERVERDOWNKICKMESSAGE.replace("&", "§"));
+                    }
                 } else {
-                    addplayertoqueue(event.getPlayer().getUniqueId(), AFTERQUEUE, event.getPlayer());
+                    if (mainonline && queueonline && authonline) {
+                        if (!Lang.ALWAYSQUEUE.contains("true")) {
+                            addplayertoqueue(event.getPlayer().getUniqueId(), AFTERQUEUE, event.getPlayer());
+                        } else {
+                            addplayertoqueue(event.getPlayer().getUniqueId(), AFTERQUEUE, event.getPlayer());
+                        }
+                    } else {
+                        if (Lang.CONNECTTOQUEUEWHENDOWN.contains("true")) {
+                            addplayertoqueue(event.getPlayer().getUniqueId(), AFTERQUEUE, event.getPlayer());
+                        } else {
+                            event.getPlayer().disconnect(Lang.SERVERDOWNKICKMESSAGE.replace("&", "§"));
+                        }
+                    }
                 }
             } else {
-                event.getPlayer().disconnect(Lang.SERVERDOWNKICKMESSAGE.replace("&", "§"));
+                event.getPlayer().disconnect(Lang.ANTIBOTMESSAGE.replace("&", "§"));
             }
-        } else {
-            if (mainonline && queueonline && authonline) {
-                if (!Lang.ALWAYSQUEUE.contains("true")) {
-                    addplayertoqueue(event.getPlayer().getUniqueId(), AFTERQUEUE, event.getPlayer());
-                } else {
-                    addplayertoqueue(event.getPlayer().getUniqueId(), AFTERQUEUE, event.getPlayer());
-                }
-            } else {
-                if (Lang.CONNECTTOQUEUEWHENDOWN.contains("true")) {
-                    addplayertoqueue(event.getPlayer().getUniqueId(), AFTERQUEUE, event.getPlayer());
+        } else if(Lang.ANTIBOT.contains("false")) {
+            if (!Lang.ENABLEAUTHSERVER.contains("true")) {
+                if (mainonline && queueonline) {
+                    if (!Lang.ALWAYSQUEUE.contains("true")) {
+                        if (ProxyServer.getInstance().getOnlineCount() <= Lang.MAINSERVERSLOTS)
+                            return;
+                        addplayertoqueue(event.getPlayer().getUniqueId(), AFTERQUEUE, event.getPlayer());
+                    } else {
+                        addplayertoqueue(event.getPlayer().getUniqueId(), AFTERQUEUE, event.getPlayer());
+                    }
                 } else {
                     event.getPlayer().disconnect(Lang.SERVERDOWNKICKMESSAGE.replace("&", "§"));
+                }
+            } else {
+                if (mainonline && queueonline && authonline) {
+                    if (!Lang.ALWAYSQUEUE.contains("true")) {
+                        addplayertoqueue(event.getPlayer().getUniqueId(), AFTERQUEUE, event.getPlayer());
+                    } else {
+                        addplayertoqueue(event.getPlayer().getUniqueId(), AFTERQUEUE, event.getPlayer());
+                    }
+                } else {
+                    if (Lang.CONNECTTOQUEUEWHENDOWN.contains("true")) {
+                        addplayertoqueue(event.getPlayer().getUniqueId(), AFTERQUEUE, event.getPlayer());
+                    } else {
+                        event.getPlayer().disconnect(Lang.SERVERDOWNKICKMESSAGE.replace("&", "§"));
+                    }
                 }
             }
         }
     }
-
-
     public void addplayertoqueue(UUID playeruuid, String originaltarget, ProxiedPlayer playername) {
         if (playername.hasPermission(Lang.QUEUEPRIORITYPERMISSION)) {
             playername.sendMessage(Lang.SERVERISFULLMESSAGE.replace('&', '§'));
@@ -140,29 +161,63 @@ public class Events implements Listener {
         }
     }
     @EventHandler(priority = EventPriority.HIGHEST)
-    public void onDisconnect(PlayerDisconnectEvent e) {
-        if (e.getPlayer().getServer().getInfo().getName().equalsIgnoreCase(Lang.QUEUESERVER)) {
-            if (!e.getPlayer().hasPermission(Lang.QUEUEPRIORITYPERMISSION)) {
-                LeeesBungeeQueue.getInstance().getRegularqueue().remove(e.getPlayer().getUniqueId());
-                regular.remove(e.getPlayer().getUniqueId());
-            } else {
-                LeeesBungeeQueue.getInstance().getPriorityqueue().remove(e.getPlayer().getUniqueId());
-                priority.remove(e.getPlayer().getUniqueId());
+    public void ontick(ServerConnectedEvent event) {
+        if (Lang.ANTIBOT.contains("true")) {
+            if (event.getPlayer().hasPermission("antivpn.bypass")) {
+                if (Lang.ALWAYSQUEUE.contains("true")) {
+                    if (event.getServer().getInfo().getName().equals(Lang.QUEUESERVER)) {
+                        if (event.getPlayer().hasPermission(Lang.QUEUEPRIORITYPERMISSION)) {
+                            if (!LeeesBungeeQueue.getInstance().getPriorityqueue().containsKey(event.getPlayer().getUniqueId())) {
+                                priority.add(event.getPlayer().getUniqueId());
+                            }
+                        } else {
+                            if (!LeeesBungeeQueue.getInstance().getRegularqueue().containsKey(event.getPlayer().getUniqueId())) {
+                                regular.add(event.getPlayer().getUniqueId());
+                            }
+                        }
+                    }
+                }
+            }
+        } else if(Lang.ANTIBOT.contains("false")) {
+            if (Lang.ALWAYSQUEUE.contains("true")) {
+                if (event.getServer().getInfo().getName().equals(Lang.QUEUESERVER)) {
+                    if (event.getPlayer().hasPermission(Lang.QUEUEPRIORITYPERMISSION)) {
+                        if (!LeeesBungeeQueue.getInstance().getPriorityqueue().containsKey(event.getPlayer().getUniqueId())) {
+                            priority.add(event.getPlayer().getUniqueId());
+                        }
+                    } else {
+                        if (!LeeesBungeeQueue.getInstance().getRegularqueue().containsKey(event.getPlayer().getUniqueId())) {
+                            regular.add(event.getPlayer().getUniqueId());
+                        }
+                    }
+                }
             }
         }
     }
 
     @EventHandler(priority = EventPriority.HIGHEST)
-    public void ontick(ServerConnectedEvent event) {
-        if (Lang.ALWAYSQUEUE.contains("true")) {
-            if (event.getServer().getInfo().getName().equals(Lang.QUEUESERVER)) {
-                if (event.getPlayer().hasPermission(Lang.QUEUEPRIORITYPERMISSION)) {
-                    if (!LeeesBungeeQueue.getInstance().getPriorityqueue().containsKey(event.getPlayer().getUniqueId())) {
-                        priority.add(event.getPlayer().getUniqueId());
+    public void onDisconnect(PlayerDisconnectEvent e) {
+        if (Lang.ANTIBOT.contains("true")) {
+            if (e.getPlayer().hasPermission("antivpn.bypass")) {
+                if (e.getPlayer().getServer().getInfo().getName().equalsIgnoreCase(Lang.QUEUESERVER)) {
+                    if (!e.getPlayer().hasPermission(Lang.QUEUEPRIORITYPERMISSION)) {
+                        LeeesBungeeQueue.getInstance().getRegularqueue().remove(e.getPlayer().getUniqueId());
+                        regular.remove(e.getPlayer().getUniqueId());
+                    } else {
+                        LeeesBungeeQueue.getInstance().getPriorityqueue().remove(e.getPlayer().getUniqueId());
+                        priority.remove(e.getPlayer().getUniqueId());
                     }
-                } else {
-                    if (!LeeesBungeeQueue.getInstance().getRegularqueue().containsKey(event.getPlayer().getUniqueId())) {
-                        regular.add(event.getPlayer().getUniqueId());
+                }
+            }
+        } else if(Lang.ANTIBOT.contains("false")) {
+            if (e.getPlayer().hasPermission("antivpn.bypass")) {
+                if (e.getPlayer().getServer().getInfo().getName().equalsIgnoreCase(Lang.QUEUESERVER)) {
+                    if (!e.getPlayer().hasPermission(Lang.QUEUEPRIORITYPERMISSION)) {
+                        LeeesBungeeQueue.getInstance().getRegularqueue().remove(e.getPlayer().getUniqueId());
+                        regular.remove(e.getPlayer().getUniqueId());
+                    } else {
+                        LeeesBungeeQueue.getInstance().getPriorityqueue().remove(e.getPlayer().getUniqueId());
+                        priority.remove(e.getPlayer().getUniqueId());
                     }
                 }
             }
