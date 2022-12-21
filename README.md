@@ -22,7 +22,7 @@ Waterfall / Bungeecord config.yml ->
 
 please note NEVER use the plugin
 with main or auth in priorities
-make the only server in priorities is the queue server
+make sure the only server in priorities is the queue server
 EXAMPLE:
  priorities:
  - queue
