@@ -1,5 +1,4 @@
 # LeeesBungeeQueue
-[![discord](https://discord.com/api/guilds/683053832694923319/embed.png)](https://discord.gg/WWm35Tc)
 
 LeeesBungeeQueue is a 2b2t like queue plugin for Bungeecord
 very easy to configure just make sure you have these things on bungeecord
