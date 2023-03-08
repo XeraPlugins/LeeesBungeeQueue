@@ -268,4 +268,12 @@ public class Events implements Listener {
             event.setKickReason(Lang.KICKMESSAGE.replace("&", "§"));
         }
     }
+
+    @EventHandler
+    public void onPing(ProxyPingEvent event) {
+        if (Lang.RANDOMICONS.contains("true")) {
+            if (LeeesBungeeQueue.getInstance().icons.size() > 0)
+                event.getResponse().setFavicon(LeeesBungeeQueue.getInstance().icons.get((int) (Math.random() * LeeesBungeeQueue.getInstance().icons.size())));
+        }
+    }
 }

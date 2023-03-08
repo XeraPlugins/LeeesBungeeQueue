@@ -1,5 +1,6 @@
 package Leees.Bungee.Queue.Bungee;
 
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -9,17 +10,22 @@ import java.util.Map.Entry;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
+import net.md_5.bungee.api.Favicon;
 import net.md_5.bungee.api.chat.ComponentBuilder;
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
+import net.md_5.bungee.api.event.ProxyPingEvent;
 import net.md_5.bungee.api.plugin.Plugin;
 import net.md_5.bungee.config.Configuration;
 import net.md_5.bungee.config.ConfigurationProvider;
 import net.md_5.bungee.config.YamlConfiguration;
+import net.md_5.bungee.event.EventHandler;
 import org.apache.commons.lang.ObjectUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+
+import javax.imageio.ImageIO;
 
 /**
  * LeeesBungeeQueue
@@ -27,6 +33,7 @@ import org.bukkit.ChatColor;
 public class LeeesBungeeQueue extends Plugin {
     public LinkedHashMap<UUID, String> regularqueue = new LinkedHashMap<>();
     public LinkedHashMap<UUID, String> priorityqueue = new LinkedHashMap<>();
+
     public LinkedHashMap<UUID, String> getRegularqueue() {
         return regularqueue;
     }
@@ -43,6 +50,8 @@ public class LeeesBungeeQueue extends Plugin {
         return instance;
     }
 
+    List<Favicon> icons = new ArrayList<Favicon>();
+
     @Override
     public void onEnable() {
         instance = this;
@@ -58,6 +67,37 @@ public class LeeesBungeeQueue extends Plugin {
         getProxy().getPluginManager().registerListener(this, new Events());
         getProxy().getPluginManager().registerListener(this, new PingEvent());
         logger.info("§9Scheduling tasks");
+
+
+        //Random icon
+        if (Lang.RANDOMICONS.contains("true")) {
+            logger.info("RandomIcon: Enabled");
+            File iconsDir = new File(getDataFolder() + "/icons");
+            if (!iconsDir.exists())
+                iconsDir.mkdirs();
+            File[] iconFiles = iconsDir.listFiles();
+            if (iconFiles != null) {
+                for (File file : iconFiles) {
+                    try {
+                        BufferedImage bimg = ImageIO.read(file);
+                        if (bimg.getHeight() == 64 && bimg.getWidth() == 64) {
+                            this.icons.add(Favicon.create(bimg));
+                        } else {
+                            getLogger().warning("Cannot load " + file.getName() + ": incorrect size. Must be 64x64 pixels.");
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+                if (this.icons.size() > 0) {
+                    getLogger().info(this.icons.size() + " icons loaded.");
+                } else {
+                    getLogger().warning("No icons found. Using default icon.");
+                }
+            }
+        } else {
+            logger.info("RandomIcon: Disabled");
+        }
 
         //sends the position message and updates tab on an interval for non priority players and priority players in chat
         getProxy().getScheduler().schedule(this, () -> {

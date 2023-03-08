@@ -1,4 +1,4 @@
-#LeeesBungeeQueue V5.2.0
+#LeeesBungeeQueue V5.2.1
 #make sure to follow the tutorial on the github
 #it tells you everything you need to do
 #https://github.com/XeraPlugins/LeeesBungeeQueue
@@ -69,6 +69,13 @@ SERVERPINGINFO:
   - "&6Max players on main server: &l%maxplayers%"
   - "&6Donate to recieve priority queue at &chttps://donate.8b8t.me"
 CUSTOMPROTOCOL: "&18b&98t &61.8.x to 1.19.x"
+
+
+#Do you want your server icons to change randomly
+#you must place 64x64 .png images in the icons folder
+RANDOMICONS: "true"
+
+#Do you want LBQ to control your MOTD's ?
 ENABLEMOTD: "true"
 MOTD: "&18b&98t &6Queue Size: Prio: &l%priosize% &6Reg: &l%regsize% &6Total: &l%total% &6Max: &l%maxplayers%"
 ENABLERANDOMMOTD: "true"
