@@ -50,7 +50,11 @@ servers:
 
 
 LeeesBungeeQueue config.yml ->
-
+#1
+How to configure LBQ's config properly
+make sure you set the names of the servers
+in lbq to the exact name of the ones you set
+in the bungeecord config
 #Antibot works by checking
 #if player has permission
 #antivpn.bypass use this plugin:
@@ -59,11 +63,8 @@ LeeesBungeeQueue config.yml ->
 ANTIBOT: "true" #Disable this if you have your own antibot
 ANTIBOTMESSAGE: "&6[&18builders&98tools&6]\n\nTo play 8b8t verify your username at &chttps://antibot.8b8t.me\n&6Para jugar a 8b8t verifica tu nombre de usuario en &chttps://antibot.8b8t.me"
 
-How to configure LBQ's config properly
-make sure you set the names of the servers
-in lbq to the exact name of the ones you set
-in the bungeecord config
 
+#2
 QUEUESERVER: "queue"
 MAINSERVER: "8b8t"
 #set this to false if your a premium server
